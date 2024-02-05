@@ -28,7 +28,9 @@ Other e-Cards, such as those from the Pokémon series or from Doubutsu no Mori e
 If you're interested in printing physical dot codes, you will also need to meet several printer requirements detailed here.
 
 ### Installation
-Head to the [Releases page](https://github.com/Hunter-Raff/e-ReaderCardCreator/releases) to download the ZIP file and extract the latest version of this tool. Alternatively, you can download the source files here and build through Visual Studio 2019 or higher.
+Head to the [Releases page](https://github.com/Hunter-Raff/e-ReaderCardCreator/releases) to download the ZIP file and extract the latest version of this tool. 
+
+Alternatively, you can download the source files here and build through Visual Studio 2019 or higher. If building from source, you'll need to modify the folder structure to include `/Decompression/` and `/References/` and `/Resources/` inside a root `/Project Files/` folder.
 
 ### Usage
 
@@ -80,6 +82,7 @@ If nothing works, you can try to print from a `.raw` file directly through CaitS
 
 ## To-Do
 - Add GBA letter customization support
+- Add card ID support; card IDs are currently randomly set
 - Convert external e-Reader dev tools to innate code without processing separately
 - Add more error handling
 - Look into DnM e+ support
