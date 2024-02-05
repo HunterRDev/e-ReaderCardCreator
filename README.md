@@ -32,7 +32,7 @@ Head to the [Releases page](https://github.com/Hunter-Raff/e-ReaderCardCreator/r
 
 ### Usage
 
-This tool innately converts e-Card data from `.raw` to `.bin` and decompresses said data further to readable values. Each decompression step is logged as a file in `/Project Files/Decompression/eCard/`. Due to the program's reliance on external applications and reading/writing files, **it is important to keep the `/Project Files/` directory untouched unless you know what you're doing**.
+This tool innately converts e-Card data from `.raw` to `.bin` and decompresses said data further to readable values. Each decompression step is logged as a file in `/Project Files/Decompression/eCard/`. Due to the program's reliance on external applications and reading/writing files, **it is important to keep the `/Project Files/` directory untouched unless you know what you're doing**. Ideally, the tool innately converts all external tools without processing shenanigans, but the source code did not cooperate with Windows Forms, even when re-written in modern C#... 
 
 If the main executable is in the same root as `/Project Files/`, then using the program is as simple as launching the executable.
 - Open existing e-Cards with `File > Open`
@@ -77,6 +77,12 @@ If nothing works, you can try to print from a `.raw` file directly through CaitS
 - Typing in the letter body textbox requires using newlines for the preview to update properly
 - Some rendering issues with the preview letter (*see: Bunnie's official e-Card data*)
 - Saving a dot code as a `.bmp` image currently does not prompt for the `.bmp` file extension. Saving still works, but manually adding the extension will save it with a double extension (`.bmp.bmp`)
+
+## To-Do
+- Add GBA letter customization support
+- Convert external e-Reader dev tools to innate code without processing separately
+- Add more error handling
+- Look into DnM e+ support
 
 ## Contact
 If bugs are found, I encourage bug reports via the [Issues page](https://github.com/Hunter-Raff/e-ReaderCardCreator/issues). You may also email issues to `hunterr.contact@gmail.com`.
