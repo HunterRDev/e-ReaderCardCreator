@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Airmail_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Airmail_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Aloha_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Aloha_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Animal_Crossing_PAL_Font" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Animal_Crossing_PAL_Font.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bamboo_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bamboo_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Blossom_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Blossom_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bluebell_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bluebell_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Butterfly_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Butterfly_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cloudy_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cloudy_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cool_Neon_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cool_Neon_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cool_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cool_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dainty_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dainty_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Daisy_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Daisy_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Deep_Sea_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Deep_Sea_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dragon_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dragon_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Elegant_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Elegant_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Essay_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Essay_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="e_reader_ccc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\e-reader-ccc.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fantasy_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fantasy_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Felt_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Felt_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Festive_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Festive_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fireworks_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fireworks_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fortune_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fortune_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FOT_Rodin_Pro_M" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FOT-Rodin Pro M.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Gingko_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gingko_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gyroid_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gyroid_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Honeybee_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Honeybee_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Horsetail_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Horsetail_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hot_Neon_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hot_Neon_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="infinity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\infinity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Inky_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Inky_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ivy_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ivy_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lacy_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lacy_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lattice_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lattice_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Maple_Leaf_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Maple_Leaf_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Misty_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Misty_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Museum_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Museum_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mystic_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mystic_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Neat_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Neat_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="New_Year_s_Card_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\New_Year's_Card_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Noodle_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Noodle_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Octopus_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Octopus_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Orange_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Orange_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Panda_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Panda_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Parchment_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Parchment_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Parchment_PG__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Parchment_PG (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Petal_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Petal_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Polka-Dot_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Polka-Dot_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="print" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\print.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rainbow_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rainbow_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rainy_Day_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rainy_Day_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ranch_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ranch_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ribbon_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ribbon_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sample_dotcode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sample_dotcode.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Simple_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Simple_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Skyline_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skyline_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Snowy_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Snowy_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sparkly_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sparkly_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Spooky_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Spooky_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stageshow_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stageshow_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Starry_Sky_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Starry_Sky_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Steel_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Steel_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sunset_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sunset_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Thick_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Thick_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tile_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tile_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Vine_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Vine_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Watermelon_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Watermelon_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wing_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wing_Paper_PG (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Winter_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Winter_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Woodcut_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Woodcut_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Woodland_Paper_PG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Woodland_Paper_PG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

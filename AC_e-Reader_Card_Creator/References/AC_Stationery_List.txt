@@ -1,0 +1,64 @@
+﻿0x2000, Airmail Paper, 70-40-50
+0x2001, Sparkly Paper, 40-40-130
+0x2002, Bamboo Paper, 90-30-30
+0x2003, Orange Paper, 75-115-215
+0x2004, Essay Paper, 90-70-20
+0x2005, Panda Paper, 110-60-0
+0x2006, Ranch Paper, 95-25-0
+0x2007, Steel Paper, 255-255-255
+0x2008, Blossom Paper, 0-100-120
+0x2009, Vine Paper, 40-85-0
+0x200A, Cloudy Paper, 0-40-135
+0x200B, Petal Paper, 155-50-60
+0x200C, Snowy Paper, 255-255-255
+0x200D, Rainy Day Paper, 255-255-255
+0x200E, Watermelon Paper, 90-90-90
+0x200F, Deep Sea Paper, 0-10-130
+0x2010, Starry Sky Paper, 200-255-235
+0x2011, Daisy Paper, 70-50-30
+0x2012, Bluebell Paper, 105-65-160
+0x2013, Maple Leaf Paper, 65-60-0
+0x2014, Woodcut Paper, 60-0-90
+0x2015, Octopus Paper, 85-85-85
+0x2016, Festive Paper, 255-180-0
+0x2017, Skyline Paper, 85-55-0
+0x2018, Museum Paper, 95-75-10
+0x2019, Fortune Paper, 120-120-120
+0x201A, Stageshow Paper, 255-255-105
+0x201B, Thick Paper, 110-85-20
+0x201C, Spooky Paper, 0-155-0
+0x201D, Noodle Paper, 100-130-185
+0x201E, Neat Paper, 0-100-0
+0x201F, Horsetail Paper, 90-100-0
+0x2020, Felt Paper, 160-0-0
+0x2021, Parchment, 115-60-0
+0x2022, Cool Paper, 255-185-0
+0x2023, Elegant Paper, 255-255-200
+0x2024, Lacy Paper, 0-0-100
+0x2025, Polka-Dot Paper, 0-100-155
+0x2026, Dizzy Paper, 0-100-200
+0x2027, Rainbow Paper, 165-20-0
+0x2028, Hot Neon Paper, 155-40-40
+0x2029, Cool Neon Paper, 0-80-135
+0x202A, Aloha Paper, 0-20-90
+0x202B, Ribbon Paper, 100-100-155
+0x202C, Fantasy Paper, 0-80-5
+0x202D, Woodland Paper, 95-70-0
+0x202E, Gingko Paper, 100-140-100
+0x202F, Fireworks Paper, 255-255-255
+0x2030, Winter Paper, 100-110-100
+0x2031, Gyroid Paper, 80-70-0
+0x2032, Ivy Paper, 50-155-0
+0x2033, Wing Paper, 0-95-175
+0x2034, Dragon Paper, 0-50-90
+0x2035, Tile Paper, 0-60-205
+0x2036, Misty Paper, 0-100-0
+0x2037, Simple Paper, 0-80-80
+0x2038, Honeybee Paper, 0-115-60
+0x2039, Mystic Paper, 100-80-100
+0x203A, Sunset Paper, 255-255-100
+0x203B, Lattice Paper, 90-60-0
+0x203C, Dainty Paper, 55-125-0
+0x203D, Butterfly Paper, 0-155-0
+0x203E, New Year's Card, 70-50-235
+0x203F, Inky Paper, 255-255-255
