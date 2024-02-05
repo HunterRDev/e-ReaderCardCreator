@@ -4,6 +4,7 @@
 The e-Reader Card Creator is a frontend tool written primarily in C# designed to interact with Nintendo's e-Reader dot code data. This tool utilizes and builds off the work of [CaitSith2](https://caitsith2.com/), [Tim Schuerewegen](https://www.schuerewegen.tk/), and [BlackShark](https://github.com/Bl4ckSh4rk)'s e-Reader development contributions.
 
 This tool currently only supports Windows operating systems.
+
 IMPORTANT: Please keep the main executable in the same root directoy as `/Project Files/`
 
 ## Supported e-Cards & Formats
