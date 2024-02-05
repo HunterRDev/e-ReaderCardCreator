@@ -33,13 +33,13 @@
             this.comboBox_DPI = new System.Windows.Forms.ComboBox();
             this.label_DotCodeDPI = new System.Windows.Forms.Label();
             this.btn_SaveBMP = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label_Printer = new System.Windows.Forms.Label();
             this.comboBox_Printer = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label_dpiPrinter = new System.Windows.Forms.Label();
             this.label_PrinterDPI = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.picture_DotCode = new System.Windows.Forms.PictureBox();
             btn_Print = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_DotCode)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Print
@@ -87,14 +87,14 @@
             this.btn_SaveBMP.UseVisualStyleBackColor = true;
             this.btn_SaveBMP.Click += new System.EventHandler(this.SaveBMP);
             // 
-            // label3
+            // label_Printer
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(176, 130);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 19);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Printer";
+            this.label_Printer.AutoSize = true;
+            this.label_Printer.Location = new System.Drawing.Point(176, 130);
+            this.label_Printer.Name = "label_Printer";
+            this.label_Printer.Size = new System.Drawing.Size(60, 19);
+            this.label_Printer.TabIndex = 6;
+            this.label_Printer.Text = "Printer";
             // 
             // comboBox_Printer
             // 
@@ -106,14 +106,14 @@
             this.comboBox_Printer.TabIndex = 7;
             this.comboBox_Printer.SelectionChangeCommitted += new System.EventHandler(this.SelectPrinter);
             // 
-            // label4
+            // label_dpiPrinter
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(471, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(143, 19);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Printer DPI  (auto)";
+            this.label_dpiPrinter.AutoSize = true;
+            this.label_dpiPrinter.Location = new System.Drawing.Point(471, 130);
+            this.label_dpiPrinter.Name = "label_dpiPrinter";
+            this.label_dpiPrinter.Size = new System.Drawing.Size(143, 19);
+            this.label_dpiPrinter.TabIndex = 8;
+            this.label_dpiPrinter.Text = "Printer DPI  (auto)";
             // 
             // label_PrinterDPI
             // 
@@ -126,27 +126,27 @@
             this.label_PrinterDPI.TabIndex = 9;
             this.label_PrinterDPI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pictureBox2
+            // picture_DotCode
             // 
-            this.pictureBox2.Image = global::AC_e_Reader_Card_Creator.Properties.Resources.sample_dotcode;
-            this.pictureBox2.InitialImage = global::AC_e_Reader_Card_Creator.Properties.Resources.sample_dotcode;
-            this.pictureBox2.Location = new System.Drawing.Point(31, 28);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(991, 63);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
+            this.picture_DotCode.Image = global::AC_e_Reader_Card_Creator.Properties.Resources.sample_dotcode;
+            this.picture_DotCode.InitialImage = global::AC_e_Reader_Card_Creator.Properties.Resources.sample_dotcode;
+            this.picture_DotCode.Location = new System.Drawing.Point(31, 28);
+            this.picture_DotCode.Name = "picture_DotCode";
+            this.picture_DotCode.Size = new System.Drawing.Size(991, 63);
+            this.picture_DotCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picture_DotCode.TabIndex = 11;
+            this.picture_DotCode.TabStop = false;
             // 
             // Print_Frontend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1061, 205);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.picture_DotCode);
             this.Controls.Add(this.label_PrinterDPI);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label_dpiPrinter);
             this.Controls.Add(this.comboBox_Printer);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label_Printer);
             this.Controls.Add(btn_Print);
             this.Controls.Add(this.btn_SaveBMP);
             this.Controls.Add(this.label_DotCodeDPI);
@@ -157,7 +157,7 @@
             this.MinimizeBox = false;
             this.Name = "Print_Frontend";
             this.Text = "Print Dot Code";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_DotCode)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,10 +168,10 @@
         private System.Windows.Forms.ComboBox comboBox_DPI;
         private System.Windows.Forms.Label label_DotCodeDPI;
         private System.Windows.Forms.Button btn_SaveBMP;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label_Printer;
         private System.Windows.Forms.ComboBox comboBox_Printer;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label_dpiPrinter;
         private System.Windows.Forms.Label label_PrinterDPI;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picture_DotCode;
     }
 }

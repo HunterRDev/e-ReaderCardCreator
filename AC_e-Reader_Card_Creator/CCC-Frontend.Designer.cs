@@ -40,6 +40,9 @@ namespace AC_e_Reader_Card_Creator
             this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_ClearInputs = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_OpenFileDir = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_Help = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_GitRepo = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_About = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -148,7 +151,8 @@ namespace AC_e_Reader_Card_Creator
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem1,
-            this.editToolStripMenuItem1});
+            this.editToolStripMenuItem1,
+            this.menu_Help});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1117, 33);
@@ -216,6 +220,29 @@ namespace AC_e_Reader_Card_Creator
             this.menu_OpenFileDir.Size = new System.Drawing.Size(266, 34);
             this.menu_OpenFileDir.Text = "Open File Directory";
             this.menu_OpenFileDir.Click += new System.EventHandler(this.OpenDecompressedFileDir);
+            // 
+            // menu_Help
+            // 
+            this.menu_Help.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menu_GitRepo,
+            this.menu_About});
+            this.menu_Help.Name = "menu_Help";
+            this.menu_Help.Size = new System.Drawing.Size(65, 29);
+            this.menu_Help.Text = "Help";
+            // 
+            // menu_GitRepo
+            // 
+            this.menu_GitRepo.Name = "menu_GitRepo";
+            this.menu_GitRepo.Size = new System.Drawing.Size(270, 34);
+            this.menu_GitRepo.Text = "GitHub Repo";
+            this.menu_GitRepo.Click += new System.EventHandler(this.GitRepoClick);
+            // 
+            // menu_About
+            // 
+            this.menu_About.Name = "menu_About";
+            this.menu_About.Size = new System.Drawing.Size(270, 34);
+            this.menu_About.Text = "About";
+            this.menu_About.Click += new System.EventHandler(this.AboutClick);
             // 
             // fileToolStripMenuItem
             // 
@@ -380,7 +407,7 @@ namespace AC_e_Reader_Card_Creator
             this.btn_GenDotCode.TabIndex = 18;
             this.btn_GenDotCode.Text = "Generate Dot Code";
             this.btn_GenDotCode.UseVisualStyleBackColor = true;
-            this.btn_GenDotCode.Click += new System.EventHandler(this.GenerateDotCode);
+            this.btn_GenDotCode.Click += new System.EventHandler(this.GenerateDotCodeClick);
             // 
             // header_Greeting
             // 
@@ -640,6 +667,9 @@ namespace AC_e_Reader_Card_Creator
         private ToolStripMenuItem menu_ClearInputs;
         private ToolStripMenuItem menu_OpenCharCard;
         private ToolStripMenuItem menu_OpenFileDir;
+        private ToolStripMenuItem menu_Help;
+        private ToolStripMenuItem menu_GitRepo;
+        private ToolStripMenuItem menu_About;
     }
 }
 

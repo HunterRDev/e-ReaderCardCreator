@@ -486,7 +486,7 @@ namespace AC_e_Reader_Card_Creator
             }
         }
 
-        private void GenerateDotCode(object sender, EventArgs e)
+        private void GenerateDotCodeClick(object sender, EventArgs e)
         {
             if (ValidInputs())
             {
@@ -508,6 +508,30 @@ namespace AC_e_Reader_Card_Creator
                 printer_form.Location = new Point(centerX, centerY);
                 printer_form.ShowDialog();
             }
+        }
+
+        private void GitRepoClick(object sender, EventArgs e)
+        {
+            string URL = "https://github.com/Hunter-Raff/e-ReaderCardCreator";
+            try
+            {
+                Process.Start(
+                    new ProcessStartInfo
+                    {
+                        FileName = URL,
+                        UseShellExecute = true
+                    }
+                );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to open web browser: {ex.Message}");
+            }
+        }
+
+        private void AboutClick(object sender, EventArgs e)
+        {
+            MessageBox.Show(Common.CREDIT, "e-Reader Character Card Creator");
         }
     }
 }

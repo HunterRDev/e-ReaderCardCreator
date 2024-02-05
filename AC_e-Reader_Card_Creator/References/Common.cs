@@ -16,6 +16,14 @@ namespace AC_e_Reader_Card_Creator.References
 
         public static string VERSION = "v1.0.0";
 
+        public static string CREDIT = "AC e-Reader Character Card Creator\n" +
+                                      VERSION + "\n" +
+                                      "Created by: Hunter R.\n\n" +
+                                      "External tools by:\n" +
+                                      "CaitSith2\n" +
+                                      "Tim Schuerewegen\n" +
+                                      "BlackShark";
+
         public static string STATIONERY_LIST = @"Project Files\References\AC_Stationery_List.txt";
         public static string ITEM_LIST = @"Project Files\References\AC_Item_List.txt";
         public static string SENDER_LIST = @"Project Files\References\AC_Sender_List.txt";
