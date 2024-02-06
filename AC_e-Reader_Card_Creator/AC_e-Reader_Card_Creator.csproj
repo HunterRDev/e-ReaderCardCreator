@@ -24,13 +24,12 @@
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <ManifestCertificateThumbprint>8C26734D6AC4E12062A9F4AF2B1C64330FB784B2</ManifestCertificateThumbprint>
-    <ManifestKeyFile>AC_e-Reader_Card_Creator_TemporaryKey.pfx</ManifestKeyFile>
+  <PropertyGroup Condition="'$(SignAssemblies)' == 'True'">
+    <AssemblyOriginatorKeyFile>AC_e-Reader_Card_Creator_TemporaryKey.snk</AssemblyOriginatorKeyFile>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <None Include="AC_e-Reader_Card_Creator_TemporaryKey.pfx" />
+  <ItemGroup Condition="'$(SignAssemblies)' == 'True'">
+    <None Include="AC_e-Reader_Card_Creator_TemporaryKey.snk" />
   </ItemGroup>
 
   <PropertyGroup>
