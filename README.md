@@ -5,7 +5,7 @@ The e-Reader Card Creator is a frontend tool written primarily in C# designed to
 
 This tool currently only supports Windows operating systems.
 
-IMPORTANT: Please keep the main executable in the same root directoy as `/Project Files/`
+IMPORTANT: Please keep the main executable in the same root directory as `/Project Files/`
 
 ## Supported e-Cards & Formats
 As of right now, this tool is designed specifically for a subset of North American Animal Crossing cards:
@@ -30,7 +30,7 @@ If you're interested in printing physical dot codes, you will also need to meet 
 ### Installation
 Head to the [Releases page](https://github.com/Hunter-Raff/e-ReaderCardCreator/releases) to download the ZIP file and extract the latest version of this tool. 
 
-Alternatively, you can download the source files here and build through Visual Studio 2019 or higher. If building from source, you'll need to modify the folder structure to include `/Decompression/` and `/References/` and `/Resources/` inside a root `/Project Files/` folder.
+Alternatively, you can download the source files here and build them through Visual Studio 2019 or higher. If building from source, you'll need to modify the folder structure to include `/Decompression/` and `/References/` and `/Resources/` inside a root `/Project Files/` folder.
 
 ### Usage
 
@@ -78,13 +78,13 @@ If nothing works, you can try to print from a `.raw` file directly through CaitS
 ## Known Bugs
 - Typing in the letter body textbox requires using newlines for the preview to update properly
 - Some rendering issues with the preview letter (*see: Bunnie's official e-Card data*)
-- Saving a dot code as a `.bmp` image currently does not prompt for the `.bmp` file extension. Saving still works, but manually adding the extension will save it with a double extension (`.bmp.bmp`)
+- ~~Saving a dot code as a `.bmp` image currently does not prompt for the `.bmp` file extension. Saving still works, but manually adding the extension will save it with a double extension (`.bmp.bmp`)~~ Fixed by Mike, aka [AkagitsuneYuki](https://github.com/AkagitsuneYuki)
 
 ## To-Do
 - Add GBA letter customization support
 - Add card ID support; card IDs are currently randomly set
 - Convert external e-Reader dev tools to innate code without processing separately
-- Add more error handling
+- Add more error-handling
 - Look into DnM e+ support
 
 ## Contact

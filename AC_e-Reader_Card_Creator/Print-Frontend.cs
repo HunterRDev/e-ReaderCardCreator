@@ -70,6 +70,7 @@ namespace AC_e_Reader_Card_Creator
 
             SaveFileDialog saveRAWFile = new SaveFileDialog
             {
+                Filter = "Bitmap Images (*.bmp)|*.bmp",
                 Title = "Save Dot Code (.bmp)",
                 FileName = "dotcode"
             };
@@ -79,7 +80,7 @@ namespace AC_e_Reader_Card_Creator
                 ProcessStartInfo raw_to_bmp = new ProcessStartInfo
                 {
                     FileName = Common.RAW2BMP,
-                    Arguments = Common.RAW2BMP_ARGS(saveRAWFile.FileName, DPI),
+                    Arguments = Common.RAW2BMP_ARGS(saveRAWFile.FileName.Replace(".bmp", ""), DPI),
                     UseShellExecute = false,
                     RedirectStandardOutput = true,
                     CreateNoWindow = true
