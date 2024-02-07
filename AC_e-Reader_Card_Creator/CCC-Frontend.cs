@@ -17,6 +17,7 @@ namespace AC_e_Reader_Card_Creator
         private readonly Dictionary<string, string> itemIDs = new Dictionary<string, string>();
         private readonly Dictionary<string, int[]> stationeryFontRGB = new Dictionary<string, int[]>();
         private readonly PrivateFontCollection AC_Letter_Font = new PrivateFontCollection();
+        private bool isDarkModeEnabled = false;
 
         public eReaderCCC()
         {
@@ -38,7 +39,7 @@ namespace AC_e_Reader_Card_Creator
         private void LoadDirectories()
         {
             string[] directoryPath = { @"Project Files\Decompression\eCard", Common.RAW_OUTPUT, Common.BIN_OUTPUT, Common.VPK_OUTPUT, Common.DEC_OUTPUT, Common.BMP_OUTPUT };
-            foreach(string dir in directoryPath)
+            foreach (string dir in directoryPath)
             {
                 if (!Directory.Exists(dir))
                 {
@@ -76,7 +77,7 @@ namespace AC_e_Reader_Card_Creator
             int maxCharBody = textBox_Body.MaxLength;
             header_Body.Text = $"Body  ( {currentCharCount} / {maxCharBody} )";
 
-            List<Label> letter_labels = new List<Label> { 
+            List<Label> letter_labels = new List<Label> {
                 label_Greeting, label_Line1, label_Line2, label_Line3, label_Line4, label_Line5, label_Line6, label_Closing
             };
             int[] fontColor = stationeryFontRGB[comboBox_Stationery.Text];
@@ -95,8 +96,8 @@ namespace AC_e_Reader_Card_Creator
                     e.Handled = true;
                 }
 
-                List<Label> letter_labels = new List<Label> { 
-                    label_Greeting, label_Line1, label_Line2, label_Line3, label_Line4, label_Line5, label_Line6, label_Closing 
+                List<Label> letter_labels = new List<Label> {
+                    label_Greeting, label_Line1, label_Line2, label_Line3, label_Line4, label_Line5, label_Line6, label_Closing
                 };
                 int[] fontColor = stationeryFontRGB[comboBox_Stationery.Text];
                 Common.HandleLetterBody(letter_labels, textBox_Body, fontColor);
@@ -135,8 +136,8 @@ namespace AC_e_Reader_Card_Creator
             if (itemID.Length == 6)
             {
                 string item_name = Common.LookupListValue(itemID, Common.ITEM_LIST);
-                
-                if(item_name != null)
+
+                if (item_name != null)
                 {
                     comboBox_ItemName.SelectedItem = item_name;
                 }
@@ -165,7 +166,7 @@ namespace AC_e_Reader_Card_Creator
                         string[] stationery_RGB_s = stationery[2].Split('-');
 
                         List<int> stationery_RGB_i = new List<int>();
-                        
+
                         for (int i = 0; i < stationery_RGB_s.Length; i++)
                         {
                             stationery_RGB_i.Add(int.Parse(stationery_RGB_s[i]));
@@ -255,8 +256,8 @@ namespace AC_e_Reader_Card_Creator
                     pictureBox_Stationery.BackgroundImage = stationeryImage;
                 }
 
-                List<Label> letter_labels = new List<Label> { 
-                    label_Greeting, label_Line1, label_Line2, label_Line3, label_Line4, label_Line5, label_Line6, label_Closing 
+                List<Label> letter_labels = new List<Label> {
+                    label_Greeting, label_Line1, label_Line2, label_Line3, label_Line4, label_Line5, label_Line6, label_Closing
                 };
                 int[] fontColor = stationeryFontRGB[comboBox_Stationery.Text];
                 foreach (Label letter_line in letter_labels)
@@ -400,7 +401,7 @@ namespace AC_e_Reader_Card_Creator
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-  
+
 
         private void OpenCharCard(object sender, EventArgs e)
         {
@@ -532,6 +533,64 @@ namespace AC_e_Reader_Card_Creator
         private void AboutClick(object sender, EventArgs e)
         {
             MessageBox.Show(Common.CREDIT, "e-Reader Character Card Creator");
+        }
+
+        private void ToggleDarkMode(object sender, EventArgs e)
+        {
+            isDarkModeEnabled = !isDarkModeEnabled;
+
+            BackColor = isDarkModeEnabled ? Color.FromArgb(40, 40, 40) : SystemColors.Control;
+
+            foreach (Control control in Controls)
+            {
+                if (control is ToolStrip)
+                {
+                    continue;
+                }
+
+                if (isDarkModeEnabled)
+                {
+                    control.BackColor = Color.FromArgb(40, 40, 40);
+                    control.ForeColor = Color.FromArgb(255, 255, 255);
+
+                    if (control is TextBox textBox)
+                    {
+                        textBox.BorderStyle = BorderStyle.FixedSingle;
+                    }
+                    else if (control is Button button)
+                    {
+                        button.FlatStyle = FlatStyle.Flat;
+                        button.FlatAppearance.BorderColor = Color.FromArgb(255, 255, 255);
+                    }
+                    else if (control is ComboBox comboBox)
+                    {
+                        comboBox.BackColor = SystemColors.Window;
+                        comboBox.ForeColor = SystemColors.ControlText;
+                    }
+                }
+                else
+                {
+                    control.BackColor = SystemColors.Control;
+                    control.ForeColor = SystemColors.ControlText;
+
+                    if (control is TextBox textBox)
+                    {
+                        textBox.BackColor = Color.White;
+                        textBox.BorderStyle = BorderStyle.Fixed3D;
+                    }
+                    else if (control is Button button)
+                    {
+                        button.BackColor = Color.White;
+                        button.FlatStyle = FlatStyle.Standard;
+                        button.FlatAppearance.BorderColor = Color.White;
+                    }
+                    else if (control is ComboBox comboBox)
+                    {
+                        comboBox.BackColor = SystemColors.Window;
+                        comboBox.ForeColor = SystemColors.ControlText;
+                    }
+                }
+            }
         }
     }
 }

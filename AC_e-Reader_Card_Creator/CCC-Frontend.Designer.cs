@@ -25,592 +25,589 @@ namespace AC_e_Reader_Card_Creator
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(eReaderCCC));
-            this.comboBox_ItemName = new System.Windows.Forms.ComboBox();
-            this.textBox_ItemID = new System.Windows.Forms.TextBox();
-            this.header_ItemID = new System.Windows.Forms.Label();
-            this.header_ItemName = new System.Windows.Forms.Label();
-            this.header_Gift = new System.Windows.Forms.Label();
-            this.header_LetterText = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_FileNew = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_NewCharCard = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_FileOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_OpenCharCard = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_ClearInputs = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_OpenFileDir = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_Help = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_GitRepo = new System.Windows.Forms.ToolStripMenuItem();
-            this.menu_About = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tutorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.videoTutorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gitHubRepositoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label_Version = new System.Windows.Forms.Label();
-            this.header_Stationery = new System.Windows.Forms.Label();
-            this.comboBox_Stationery = new System.Windows.Forms.ComboBox();
-            this.header_Sender = new System.Windows.Forms.Label();
-            this.comboBox_Sender = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btn_SaveRAW = new System.Windows.Forms.Button();
-            this.btn_GenDotCode = new System.Windows.Forms.Button();
-            this.header_Greeting = new System.Windows.Forms.Label();
-            this.header_Body = new System.Windows.Forms.Label();
-            this.textBox_Body = new System.Windows.Forms.TextBox();
-            this.header_Closing = new System.Windows.Forms.Label();
-            this.textBox_Closing = new System.Windows.Forms.TextBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label_Greeting = new System.Windows.Forms.Label();
-            this.pictureBox_Stationery = new System.Windows.Forms.PictureBox();
-            this.label_Line1 = new System.Windows.Forms.Label();
-            this.label_Line2 = new System.Windows.Forms.Label();
-            this.label_Line3 = new System.Windows.Forms.Label();
-            this.label_Line4 = new System.Windows.Forms.Label();
-            this.label_Line5 = new System.Windows.Forms.Label();
-            this.label_Line6 = new System.Windows.Forms.Label();
-            this.label_Closing = new System.Windows.Forms.Label();
-            this.comboBox_Greeting = new System.Windows.Forms.ComboBox();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Stationery)).BeginInit();
-            this.SuspendLayout();
+            comboBox_ItemName = new ComboBox();
+            textBox_ItemID = new TextBox();
+            header_ItemID = new Label();
+            header_ItemName = new Label();
+            header_Gift = new Label();
+            header_LetterText = new Label();
+            menuStrip1 = new MenuStrip();
+            fileToolStripMenuItem1 = new ToolStripMenuItem();
+            menu_FileNew = new ToolStripMenuItem();
+            menu_NewCharCard = new ToolStripMenuItem();
+            menu_FileOpen = new ToolStripMenuItem();
+            menu_OpenCharCard = new ToolStripMenuItem();
+            editToolStripMenuItem1 = new ToolStripMenuItem();
+            menu_ClearInputs = new ToolStripMenuItem();
+            menu_OpenFileDir = new ToolStripMenuItem();
+            menu_View = new ToolStripMenuItem();
+            menu_ToggleDarkMode = new ToolStripMenuItem();
+            menu_Help = new ToolStripMenuItem();
+            menu_GitRepo = new ToolStripMenuItem();
+            menu_About = new ToolStripMenuItem();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            saveToolStripMenuItem = new ToolStripMenuItem();
+            openToolStripMenuItem = new ToolStripMenuItem();
+            saveToolStripMenuItem1 = new ToolStripMenuItem();
+            saveAsToolStripMenuItem = new ToolStripMenuItem();
+            editToolStripMenuItem = new ToolStripMenuItem();
+            settingsToolStripMenuItem = new ToolStripMenuItem();
+            resetToolStripMenuItem = new ToolStripMenuItem();
+            helpToolStripMenuItem = new ToolStripMenuItem();
+            tutorialToolStripMenuItem = new ToolStripMenuItem();
+            videoTutorialToolStripMenuItem = new ToolStripMenuItem();
+            gitHubRepositoryToolStripMenuItem = new ToolStripMenuItem();
+            label_Version = new Label();
+            header_Stationery = new Label();
+            comboBox_Stationery = new ComboBox();
+            header_Sender = new Label();
+            comboBox_Sender = new ComboBox();
+            label5 = new Label();
+            btn_SaveRAW = new Button();
+            btn_GenDotCode = new Button();
+            header_Greeting = new Label();
+            header_Body = new Label();
+            textBox_Body = new TextBox();
+            header_Closing = new Label();
+            textBox_Closing = new TextBox();
+            openFileDialog1 = new OpenFileDialog();
+            label9 = new Label();
+            label_Greeting = new Label();
+            pictureBox_Stationery = new PictureBox();
+            label_Line1 = new Label();
+            label_Line2 = new Label();
+            label_Line3 = new Label();
+            label_Line4 = new Label();
+            label_Line5 = new Label();
+            label_Line6 = new Label();
+            label_Closing = new Label();
+            comboBox_Greeting = new ComboBox();
+            menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Stationery).BeginInit();
+            SuspendLayout();
             // 
             // comboBox_ItemName
             // 
-            this.comboBox_ItemName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox_ItemName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox_ItemName.FormattingEnabled = true;
-            this.comboBox_ItemName.Location = new System.Drawing.Point(149, 735);
-            this.comboBox_ItemName.Name = "comboBox_ItemName";
-            this.comboBox_ItemName.Size = new System.Drawing.Size(194, 28);
-            this.comboBox_ItemName.TabIndex = 0;
-            this.comboBox_ItemName.SelectedIndexChanged += new System.EventHandler(this.ItemNameChanged);
+            comboBox_ItemName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBox_ItemName.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBox_ItemName.FormattingEnabled = true;
+            comboBox_ItemName.Location = new System.Drawing.Point(166, 918);
+            comboBox_ItemName.Name = "comboBox_ItemName";
+            comboBox_ItemName.Size = new System.Drawing.Size(215, 33);
+            comboBox_ItemName.TabIndex = 0;
+            comboBox_ItemName.SelectedIndexChanged += ItemNameChanged;
             // 
             // textBox_ItemID
             // 
-            this.textBox_ItemID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_ItemID.Location = new System.Drawing.Point(55, 735);
-            this.textBox_ItemID.MaxLength = 4;
-            this.textBox_ItemID.Name = "textBox_ItemID";
-            this.textBox_ItemID.Size = new System.Drawing.Size(88, 26);
-            this.textBox_ItemID.TabIndex = 1;
-            this.textBox_ItemID.TextChanged += new System.EventHandler(this.ItemIDChanged);
-            this.textBox_ItemID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ItemIDKeyPress);
-            this.textBox_ItemID.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ItemIDKeyUp);
+            textBox_ItemID.CharacterCasing = CharacterCasing.Upper;
+            textBox_ItemID.Location = new System.Drawing.Point(61, 918);
+            textBox_ItemID.MaxLength = 4;
+            textBox_ItemID.Name = "textBox_ItemID";
+            textBox_ItemID.Size = new System.Drawing.Size(97, 31);
+            textBox_ItemID.TabIndex = 1;
+            textBox_ItemID.TextChanged += ItemIDChanged;
+            textBox_ItemID.KeyPress += ItemIDKeyPress;
+            textBox_ItemID.KeyUp += ItemIDKeyUp;
             // 
             // header_ItemID
             // 
-            this.header_ItemID.AutoSize = true;
-            this.header_ItemID.Location = new System.Drawing.Point(28, 712);
-            this.header_ItemID.Name = "header_ItemID";
-            this.header_ItemID.Size = new System.Drawing.Size(62, 20);
-            this.header_ItemID.TabIndex = 2;
-            this.header_ItemID.Text = "Item ID";
+            header_ItemID.AutoSize = true;
+            header_ItemID.Location = new System.Drawing.Point(31, 890);
+            header_ItemID.Name = "header_ItemID";
+            header_ItemID.Size = new System.Drawing.Size(71, 25);
+            header_ItemID.TabIndex = 2;
+            header_ItemID.Text = "Item ID";
             // 
             // header_ItemName
             // 
-            this.header_ItemName.AutoSize = true;
-            this.header_ItemName.Location = new System.Drawing.Point(145, 712);
-            this.header_ItemName.Name = "header_ItemName";
-            this.header_ItemName.Size = new System.Drawing.Size(87, 20);
-            this.header_ItemName.TabIndex = 3;
-            this.header_ItemName.Text = "Item Name";
+            header_ItemName.AutoSize = true;
+            header_ItemName.Location = new System.Drawing.Point(161, 890);
+            header_ItemName.Name = "header_ItemName";
+            header_ItemName.Size = new System.Drawing.Size(100, 25);
+            header_ItemName.TabIndex = 3;
+            header_ItemName.Text = "Item Name";
             // 
             // header_Gift
             // 
-            this.header_Gift.AutoSize = true;
-            this.header_Gift.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.header_Gift.Location = new System.Drawing.Point(25, 673);
-            this.header_Gift.Name = "header_Gift";
-            this.header_Gift.Size = new System.Drawing.Size(164, 29);
-            this.header_Gift.TabIndex = 4;
-            this.header_Gift.Text = "Attached Gift";
+            header_Gift.AutoSize = true;
+            header_Gift.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            header_Gift.Location = new System.Drawing.Point(27, 842);
+            header_Gift.Name = "header_Gift";
+            header_Gift.Size = new System.Drawing.Size(164, 29);
+            header_Gift.TabIndex = 4;
+            header_Gift.Text = "Attached Gift";
             // 
             // header_LetterText
             // 
-            this.header_LetterText.AutoSize = true;
-            this.header_LetterText.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.header_LetterText.Location = new System.Drawing.Point(25, 59);
-            this.header_LetterText.Name = "header_LetterText";
-            this.header_LetterText.Size = new System.Drawing.Size(133, 29);
-            this.header_LetterText.TabIndex = 6;
-            this.header_LetterText.Text = "Letter Text";
+            header_LetterText.AutoSize = true;
+            header_LetterText.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            header_LetterText.Location = new System.Drawing.Point(27, 73);
+            header_LetterText.Name = "header_LetterText";
+            header_LetterText.Size = new System.Drawing.Size(133, 29);
+            header_LetterText.TabIndex = 6;
+            header_LetterText.Text = "Letter Text";
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem1,
-            this.editToolStripMenuItem1,
-            this.menu_Help});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1117, 33);
-            this.menuStrip1.TabIndex = 8;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem1, editToolStripMenuItem1, menu_View, menu_Help });
+            menuStrip1.Location = new System.Drawing.Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Padding = new Padding(7, 3, 0, 3);
+            menuStrip1.Size = new System.Drawing.Size(1241, 35);
+            menuStrip1.TabIndex = 8;
+            menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem1
             // 
-            this.fileToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menu_FileNew,
-            this.menu_FileOpen});
-            this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(54, 29);
-            this.fileToolStripMenuItem1.Text = "File";
+            fileToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { menu_FileNew, menu_FileOpen });
+            fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
+            fileToolStripMenuItem1.Size = new System.Drawing.Size(54, 29);
+            fileToolStripMenuItem1.Text = "File";
             // 
             // menu_FileNew
             // 
-            this.menu_FileNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menu_NewCharCard});
-            this.menu_FileNew.Name = "menu_FileNew";
-            this.menu_FileNew.Size = new System.Drawing.Size(158, 34);
-            this.menu_FileNew.Text = "New";
+            menu_FileNew.DropDownItems.AddRange(new ToolStripItem[] { menu_NewCharCard });
+            menu_FileNew.Name = "menu_FileNew";
+            menu_FileNew.Size = new System.Drawing.Size(158, 34);
+            menu_FileNew.Text = "New";
             // 
             // menu_NewCharCard
             // 
-            this.menu_NewCharCard.Name = "menu_NewCharCard";
-            this.menu_NewCharCard.Size = new System.Drawing.Size(268, 34);
-            this.menu_NewCharCard.Text = "Character Card (AC)";
-            this.menu_NewCharCard.Click += new System.EventHandler(this.MenuNewCard);
+            menu_NewCharCard.Name = "menu_NewCharCard";
+            menu_NewCharCard.Size = new System.Drawing.Size(268, 34);
+            menu_NewCharCard.Text = "Character Card (AC)";
+            menu_NewCharCard.Click += MenuNewCard;
             // 
             // menu_FileOpen
             // 
-            this.menu_FileOpen.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menu_OpenCharCard});
-            this.menu_FileOpen.Name = "menu_FileOpen";
-            this.menu_FileOpen.Size = new System.Drawing.Size(158, 34);
-            this.menu_FileOpen.Text = "Open";
+            menu_FileOpen.DropDownItems.AddRange(new ToolStripItem[] { menu_OpenCharCard });
+            menu_FileOpen.Name = "menu_FileOpen";
+            menu_FileOpen.Size = new System.Drawing.Size(158, 34);
+            menu_FileOpen.Text = "Open";
             // 
             // menu_OpenCharCard
             // 
-            this.menu_OpenCharCard.Name = "menu_OpenCharCard";
-            this.menu_OpenCharCard.Size = new System.Drawing.Size(268, 34);
-            this.menu_OpenCharCard.Text = "Character Card (AC)";
-            this.menu_OpenCharCard.Click += new System.EventHandler(this.OpenCharCard);
+            menu_OpenCharCard.Name = "menu_OpenCharCard";
+            menu_OpenCharCard.Size = new System.Drawing.Size(268, 34);
+            menu_OpenCharCard.Text = "Character Card (AC)";
+            menu_OpenCharCard.Click += OpenCharCard;
             // 
             // editToolStripMenuItem1
             // 
-            this.editToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menu_ClearInputs,
-            this.menu_OpenFileDir});
-            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(58, 29);
-            this.editToolStripMenuItem1.Text = "Edit";
+            editToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { menu_ClearInputs, menu_OpenFileDir });
+            editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            editToolStripMenuItem1.Size = new System.Drawing.Size(58, 29);
+            editToolStripMenuItem1.Text = "Edit";
             // 
             // menu_ClearInputs
             // 
-            this.menu_ClearInputs.Name = "menu_ClearInputs";
-            this.menu_ClearInputs.Size = new System.Drawing.Size(266, 34);
-            this.menu_ClearInputs.Text = "Clear Inputs";
-            this.menu_ClearInputs.Click += new System.EventHandler(this.MenuClearValues);
+            menu_ClearInputs.Name = "menu_ClearInputs";
+            menu_ClearInputs.Size = new System.Drawing.Size(266, 34);
+            menu_ClearInputs.Text = "Clear Inputs";
+            menu_ClearInputs.Click += MenuClearValues;
             // 
             // menu_OpenFileDir
             // 
-            this.menu_OpenFileDir.Name = "menu_OpenFileDir";
-            this.menu_OpenFileDir.Size = new System.Drawing.Size(266, 34);
-            this.menu_OpenFileDir.Text = "Open File Directory";
-            this.menu_OpenFileDir.Click += new System.EventHandler(this.OpenDecompressedFileDir);
+            menu_OpenFileDir.Name = "menu_OpenFileDir";
+            menu_OpenFileDir.Size = new System.Drawing.Size(266, 34);
+            menu_OpenFileDir.Text = "Open File Directory";
+            menu_OpenFileDir.Click += OpenDecompressedFileDir;
+            // 
+            // menu_View
+            // 
+            menu_View.DropDownItems.AddRange(new ToolStripItem[] { menu_ToggleDarkMode });
+            menu_View.Name = "menu_View";
+            menu_View.Size = new System.Drawing.Size(65, 29);
+            menu_View.Text = "View";
+            // 
+            // menu_ToggleDarkMode
+            // 
+            menu_ToggleDarkMode.Name = "menu_ToggleDarkMode";
+            menu_ToggleDarkMode.Size = new System.Drawing.Size(261, 34);
+            menu_ToggleDarkMode.Text = "Toggle Dark Mode";
+            menu_ToggleDarkMode.Click += ToggleDarkMode;
             // 
             // menu_Help
             // 
-            this.menu_Help.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menu_GitRepo,
-            this.menu_About});
-            this.menu_Help.Name = "menu_Help";
-            this.menu_Help.Size = new System.Drawing.Size(65, 29);
-            this.menu_Help.Text = "Help";
+            menu_Help.DropDownItems.AddRange(new ToolStripItem[] { menu_GitRepo, menu_About });
+            menu_Help.Name = "menu_Help";
+            menu_Help.Size = new System.Drawing.Size(65, 29);
+            menu_Help.Text = "Help";
             // 
             // menu_GitRepo
             // 
-            this.menu_GitRepo.Name = "menu_GitRepo";
-            this.menu_GitRepo.Size = new System.Drawing.Size(270, 34);
-            this.menu_GitRepo.Text = "GitHub Repo";
-            this.menu_GitRepo.Click += new System.EventHandler(this.GitRepoClick);
+            menu_GitRepo.Name = "menu_GitRepo";
+            menu_GitRepo.Size = new System.Drawing.Size(216, 34);
+            menu_GitRepo.Text = "GitHub Repo";
+            menu_GitRepo.Click += GitRepoClick;
             // 
             // menu_About
             // 
-            this.menu_About.Name = "menu_About";
-            this.menu_About.Size = new System.Drawing.Size(270, 34);
-            this.menu_About.Text = "About";
-            this.menu_About.Click += new System.EventHandler(this.AboutClick);
+            menu_About.Name = "menu_About";
+            menu_About.Size = new System.Drawing.Size(216, 34);
+            menu_About.Text = "About";
+            menu_About.Click += AboutClick;
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem1,
-            this.saveAsToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
-            this.fileToolStripMenuItem.Text = "File";
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveToolStripMenuItem, openToolStripMenuItem, saveToolStripMenuItem1, saveAsToolStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+            fileToolStripMenuItem.Text = "File";
             // 
             // saveToolStripMenuItem
             // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
-            this.saveToolStripMenuItem.Text = "New";
+            saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            saveToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
+            saveToolStripMenuItem.Text = "New";
             // 
             // openToolStripMenuItem
             // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
-            this.openToolStripMenuItem.Text = "Open";
+            openToolStripMenuItem.Name = "openToolStripMenuItem";
+            openToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
+            openToolStripMenuItem.Text = "Open";
             // 
             // saveToolStripMenuItem1
             // 
-            this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(188, 34);
-            this.saveToolStripMenuItem1.Text = "Save";
+            saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
+            saveToolStripMenuItem1.Size = new System.Drawing.Size(188, 34);
+            saveToolStripMenuItem1.Text = "Save";
             // 
             // saveAsToolStripMenuItem
             // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
-            this.saveAsToolStripMenuItem.Text = "Save As...";
+            saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            saveAsToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
+            saveAsToolStripMenuItem.Text = "Save As...";
             // 
             // editToolStripMenuItem
             // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsToolStripMenuItem,
-            this.resetToolStripMenuItem});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 29);
-            this.editToolStripMenuItem.Text = "Edit";
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { settingsToolStripMenuItem, resetToolStripMenuItem });
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new System.Drawing.Size(58, 29);
+            editToolStripMenuItem.Text = "Edit";
             // 
             // settingsToolStripMenuItem
             // 
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(198, 34);
-            this.settingsToolStripMenuItem.Text = "Settings";
+            settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            settingsToolStripMenuItem.Size = new System.Drawing.Size(198, 34);
+            settingsToolStripMenuItem.Text = "Settings";
             // 
             // resetToolStripMenuItem
             // 
-            this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(198, 34);
-            this.resetToolStripMenuItem.Text = "Reset Card";
+            resetToolStripMenuItem.Name = "resetToolStripMenuItem";
+            resetToolStripMenuItem.Size = new System.Drawing.Size(198, 34);
+            resetToolStripMenuItem.Text = "Reset Card";
             // 
             // helpToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tutorialToolStripMenuItem,
-            this.videoTutorialToolStripMenuItem,
-            this.gitHubRepositoryToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
-            this.helpToolStripMenuItem.Text = "Help";
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { tutorialToolStripMenuItem, videoTutorialToolStripMenuItem, gitHubRepositoryToolStripMenuItem });
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
+            helpToolStripMenuItem.Text = "Help";
             // 
             // tutorialToolStripMenuItem
             // 
-            this.tutorialToolStripMenuItem.Name = "tutorialToolStripMenuItem";
-            this.tutorialToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
-            this.tutorialToolStripMenuItem.Text = "Tutorial";
+            tutorialToolStripMenuItem.Name = "tutorialToolStripMenuItem";
+            tutorialToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            tutorialToolStripMenuItem.Text = "Tutorial";
             // 
             // videoTutorialToolStripMenuItem
             // 
-            this.videoTutorialToolStripMenuItem.Name = "videoTutorialToolStripMenuItem";
-            this.videoTutorialToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
-            this.videoTutorialToolStripMenuItem.Text = "Video Tutorial";
+            videoTutorialToolStripMenuItem.Name = "videoTutorialToolStripMenuItem";
+            videoTutorialToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            videoTutorialToolStripMenuItem.Text = "Video Tutorial";
             // 
             // gitHubRepositoryToolStripMenuItem
             // 
-            this.gitHubRepositoryToolStripMenuItem.Name = "gitHubRepositoryToolStripMenuItem";
-            this.gitHubRepositoryToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
-            this.gitHubRepositoryToolStripMenuItem.Text = "GitHub Repository";
+            gitHubRepositoryToolStripMenuItem.Name = "gitHubRepositoryToolStripMenuItem";
+            gitHubRepositoryToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
+            gitHubRepositoryToolStripMenuItem.Text = "GitHub Repository";
             // 
             // label_Version
             // 
-            this.label_Version.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_Version.AutoSize = true;
-            this.label_Version.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Version.Location = new System.Drawing.Point(1017, 782);
-            this.label_Version.Name = "label_Version";
-            this.label_Version.Size = new System.Drawing.Size(0, 18);
-            this.label_Version.TabIndex = 9;
+            label_Version.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label_Version.AutoSize = true;
+            label_Version.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Version.Location = new System.Drawing.Point(1130, 1027);
+            label_Version.Name = "label_Version";
+            label_Version.Size = new System.Drawing.Size(0, 18);
+            label_Version.TabIndex = 9;
             // 
             // header_Stationery
             // 
-            this.header_Stationery.AutoSize = true;
-            this.header_Stationery.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.header_Stationery.Location = new System.Drawing.Point(25, 477);
-            this.header_Stationery.Name = "header_Stationery";
-            this.header_Stationery.Size = new System.Drawing.Size(130, 29);
-            this.header_Stationery.TabIndex = 12;
-            this.header_Stationery.Text = "Stationery";
+            header_Stationery.AutoSize = true;
+            header_Stationery.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            header_Stationery.Location = new System.Drawing.Point(27, 597);
+            header_Stationery.Name = "header_Stationery";
+            header_Stationery.Size = new System.Drawing.Size(130, 29);
+            header_Stationery.TabIndex = 12;
+            header_Stationery.Text = "Stationery";
             // 
             // comboBox_Stationery
             // 
-            this.comboBox_Stationery.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox_Stationery.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox_Stationery.FormattingEnabled = true;
-            this.comboBox_Stationery.Location = new System.Drawing.Point(31, 509);
-            this.comboBox_Stationery.Name = "comboBox_Stationery";
-            this.comboBox_Stationery.Size = new System.Drawing.Size(312, 28);
-            this.comboBox_Stationery.TabIndex = 13;
-            this.comboBox_Stationery.SelectedIndexChanged += new System.EventHandler(this.StationeryChanged);
+            comboBox_Stationery.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBox_Stationery.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBox_Stationery.FormattingEnabled = true;
+            comboBox_Stationery.Location = new System.Drawing.Point(34, 637);
+            comboBox_Stationery.Name = "comboBox_Stationery";
+            comboBox_Stationery.Size = new System.Drawing.Size(347, 33);
+            comboBox_Stationery.TabIndex = 13;
+            comboBox_Stationery.SelectedIndexChanged += StationeryChanged;
             // 
             // header_Sender
             // 
-            this.header_Sender.AutoSize = true;
-            this.header_Sender.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.header_Sender.Location = new System.Drawing.Point(25, 569);
-            this.header_Sender.Name = "header_Sender";
-            this.header_Sender.Size = new System.Drawing.Size(94, 29);
-            this.header_Sender.TabIndex = 14;
-            this.header_Sender.Text = "Sender";
+            header_Sender.AutoSize = true;
+            header_Sender.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            header_Sender.Location = new System.Drawing.Point(27, 712);
+            header_Sender.Name = "header_Sender";
+            header_Sender.Size = new System.Drawing.Size(94, 29);
+            header_Sender.TabIndex = 14;
+            header_Sender.Text = "Sender";
             // 
             // comboBox_Sender
             // 
-            this.comboBox_Sender.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox_Sender.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox_Sender.FormattingEnabled = true;
-            this.comboBox_Sender.Location = new System.Drawing.Point(31, 603);
-            this.comboBox_Sender.Name = "comboBox_Sender";
-            this.comboBox_Sender.Size = new System.Drawing.Size(312, 28);
-            this.comboBox_Sender.TabIndex = 15;
+            comboBox_Sender.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBox_Sender.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBox_Sender.FormattingEnabled = true;
+            comboBox_Sender.Location = new System.Drawing.Point(34, 753);
+            comboBox_Sender.Name = "comboBox_Sender";
+            comboBox_Sender.Size = new System.Drawing.Size(347, 33);
+            comboBox_Sender.TabIndex = 15;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(384, 59);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 29);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Preview";
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            label5.Location = new System.Drawing.Point(427, 73);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(103, 29);
+            label5.TabIndex = 16;
+            label5.Text = "Preview";
             // 
             // btn_SaveRAW
             // 
-            this.btn_SaveRAW.Location = new System.Drawing.Point(945, 724);
-            this.btn_SaveRAW.Name = "btn_SaveRAW";
-            this.btn_SaveRAW.Size = new System.Drawing.Size(138, 37);
-            this.btn_SaveRAW.TabIndex = 17;
-            this.btn_SaveRAW.Text = "Save .RAW";
-            this.btn_SaveRAW.UseVisualStyleBackColor = true;
-            this.btn_SaveRAW.Click += new System.EventHandler(this.SaveRAW);
+            btn_SaveRAW.BackColor = System.Drawing.Color.White;
+            btn_SaveRAW.Location = new System.Drawing.Point(1050, 905);
+            btn_SaveRAW.Name = "btn_SaveRAW";
+            btn_SaveRAW.Size = new System.Drawing.Size(153, 47);
+            btn_SaveRAW.TabIndex = 17;
+            btn_SaveRAW.Text = "Save .RAW";
+            btn_SaveRAW.UseVisualStyleBackColor = false;
+            btn_SaveRAW.Click += SaveRAW;
             // 
             // btn_GenDotCode
             // 
-            this.btn_GenDotCode.Location = new System.Drawing.Point(746, 724);
-            this.btn_GenDotCode.Name = "btn_GenDotCode";
-            this.btn_GenDotCode.Size = new System.Drawing.Size(193, 37);
-            this.btn_GenDotCode.TabIndex = 18;
-            this.btn_GenDotCode.Text = "Generate Dot Code";
-            this.btn_GenDotCode.UseVisualStyleBackColor = true;
-            this.btn_GenDotCode.Click += new System.EventHandler(this.GenerateDotCodeClick);
+            btn_GenDotCode.BackColor = System.Drawing.Color.White;
+            btn_GenDotCode.Location = new System.Drawing.Point(829, 905);
+            btn_GenDotCode.Name = "btn_GenDotCode";
+            btn_GenDotCode.Size = new System.Drawing.Size(214, 47);
+            btn_GenDotCode.TabIndex = 18;
+            btn_GenDotCode.Text = "Generate Dot Code";
+            btn_GenDotCode.UseVisualStyleBackColor = false;
+            btn_GenDotCode.Click += GenerateDotCodeClick;
             // 
             // header_Greeting
             // 
-            this.header_Greeting.AutoSize = true;
-            this.header_Greeting.Location = new System.Drawing.Point(26, 98);
-            this.header_Greeting.Name = "header_Greeting";
-            this.header_Greeting.Size = new System.Drawing.Size(71, 20);
-            this.header_Greeting.TabIndex = 19;
-            this.header_Greeting.Text = "Greeting";
+            header_Greeting.AutoSize = true;
+            header_Greeting.Location = new System.Drawing.Point(29, 123);
+            header_Greeting.Name = "header_Greeting";
+            header_Greeting.Size = new System.Drawing.Size(79, 25);
+            header_Greeting.TabIndex = 19;
+            header_Greeting.Text = "Greeting";
             // 
             // header_Body
             // 
-            this.header_Body.AutoSize = true;
-            this.header_Body.Location = new System.Drawing.Point(26, 170);
-            this.header_Body.Name = "header_Body";
-            this.header_Body.Size = new System.Drawing.Size(45, 20);
-            this.header_Body.TabIndex = 20;
-            this.header_Body.Text = "Body";
+            header_Body.AutoSize = true;
+            header_Body.Location = new System.Drawing.Point(29, 213);
+            header_Body.Name = "header_Body";
+            header_Body.Size = new System.Drawing.Size(53, 25);
+            header_Body.TabIndex = 20;
+            header_Body.Text = "Body";
             // 
             // textBox_Body
             // 
-            this.textBox_Body.Location = new System.Drawing.Point(30, 193);
-            this.textBox_Body.MaxLength = 180;
-            this.textBox_Body.Multiline = true;
-            this.textBox_Body.Name = "textBox_Body";
-            this.textBox_Body.Size = new System.Drawing.Size(312, 188);
-            this.textBox_Body.TabIndex = 21;
-            this.textBox_Body.TextChanged += new System.EventHandler(this.LetterBodyChanged);
-            this.textBox_Body.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LetterBodyKeyPress);
+            textBox_Body.Location = new System.Drawing.Point(33, 242);
+            textBox_Body.MaxLength = 180;
+            textBox_Body.Multiline = true;
+            textBox_Body.Name = "textBox_Body";
+            textBox_Body.Size = new System.Drawing.Size(347, 234);
+            textBox_Body.TabIndex = 21;
+            textBox_Body.TextChanged += LetterBodyChanged;
+            textBox_Body.KeyPress += LetterBodyKeyPress;
             // 
             // header_Closing
             // 
-            this.header_Closing.AutoSize = true;
-            this.header_Closing.Location = new System.Drawing.Point(28, 399);
-            this.header_Closing.Name = "header_Closing";
-            this.header_Closing.Size = new System.Drawing.Size(61, 20);
-            this.header_Closing.TabIndex = 22;
-            this.header_Closing.Text = "Closing";
+            header_Closing.AutoSize = true;
+            header_Closing.Location = new System.Drawing.Point(31, 498);
+            header_Closing.Name = "header_Closing";
+            header_Closing.Size = new System.Drawing.Size(71, 25);
+            header_Closing.TabIndex = 22;
+            header_Closing.Text = "Closing";
             // 
             // textBox_Closing
             // 
-            this.textBox_Closing.Location = new System.Drawing.Point(31, 422);
-            this.textBox_Closing.Name = "textBox_Closing";
-            this.textBox_Closing.Size = new System.Drawing.Size(312, 26);
-            this.textBox_Closing.TabIndex = 23;
-            this.textBox_Closing.TextChanged += new System.EventHandler(this.ClosingChanged);
+            textBox_Closing.Location = new System.Drawing.Point(34, 527);
+            textBox_Closing.Name = "textBox_Closing";
+            textBox_Closing.Size = new System.Drawing.Size(347, 31);
+            textBox_Closing.TabIndex = 23;
+            textBox_Closing.TextChanged += ClosingChanged;
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.Filter = "RAW Files (*raw)|*raw";
-            this.openFileDialog1.Title = "Open e-Reader Card RAW File";
+            openFileDialog1.Filter = "RAW Files (*raw)|*raw";
+            openFileDialog1.Title = "Open e-Reader Card RAW File";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(28, 741);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(25, 20);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "0x";
+            label9.AutoSize = true;
+            label9.Location = new System.Drawing.Point(31, 927);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(30, 25);
+            label9.TabIndex = 25;
+            label9.Text = "0x";
             // 
             // label_Greeting
             // 
-            this.label_Greeting.AutoSize = true;
-            this.label_Greeting.BackColor = System.Drawing.Color.Transparent;
-            this.label_Greeting.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Greeting.Location = new System.Drawing.Point(77, 57);
-            this.label_Greeting.Name = "label_Greeting";
-            this.label_Greeting.Size = new System.Drawing.Size(0, 32);
-            this.label_Greeting.TabIndex = 27;
+            label_Greeting.AutoSize = true;
+            label_Greeting.BackColor = System.Drawing.Color.Transparent;
+            label_Greeting.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Greeting.Location = new System.Drawing.Point(86, 72);
+            label_Greeting.Name = "label_Greeting";
+            label_Greeting.Size = new System.Drawing.Size(0, 32);
+            label_Greeting.TabIndex = 27;
             // 
             // pictureBox_Stationery
             // 
-            this.pictureBox_Stationery.BackgroundImage = global::AC_e_Reader_Card_Creator.Properties.Resources.Airmail_Paper_PG;
-            this.pictureBox_Stationery.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_Stationery.Location = new System.Drawing.Point(389, 97);
-            this.pictureBox_Stationery.Name = "pictureBox_Stationery";
-            this.pictureBox_Stationery.Size = new System.Drawing.Size(694, 605);
-            this.pictureBox_Stationery.TabIndex = 10;
-            this.pictureBox_Stationery.TabStop = false;
+            pictureBox_Stationery.BackgroundImage = Properties.Resources.Airmail_Paper_PG;
+            pictureBox_Stationery.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox_Stationery.Location = new System.Drawing.Point(433, 122);
+            pictureBox_Stationery.Name = "pictureBox_Stationery";
+            pictureBox_Stationery.Size = new System.Drawing.Size(771, 757);
+            pictureBox_Stationery.TabIndex = 10;
+            pictureBox_Stationery.TabStop = false;
             // 
             // label_Line1
             // 
-            this.label_Line1.BackColor = System.Drawing.Color.Transparent;
-            this.label_Line1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Line1.Location = new System.Drawing.Point(77, 152);
-            this.label_Line1.Name = "label_Line1";
-            this.label_Line1.Size = new System.Drawing.Size(532, 53);
-            this.label_Line1.TabIndex = 28;
+            label_Line1.BackColor = System.Drawing.Color.Transparent;
+            label_Line1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Line1.Location = new System.Drawing.Point(86, 190);
+            label_Line1.Name = "label_Line1";
+            label_Line1.Size = new System.Drawing.Size(591, 67);
+            label_Line1.TabIndex = 28;
             // 
             // label_Line2
             // 
-            this.label_Line2.BackColor = System.Drawing.Color.Transparent;
-            this.label_Line2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Line2.Location = new System.Drawing.Point(77, 205);
-            this.label_Line2.Name = "label_Line2";
-            this.label_Line2.Size = new System.Drawing.Size(532, 56);
-            this.label_Line2.TabIndex = 29;
+            label_Line2.BackColor = System.Drawing.Color.Transparent;
+            label_Line2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Line2.Location = new System.Drawing.Point(86, 257);
+            label_Line2.Name = "label_Line2";
+            label_Line2.Size = new System.Drawing.Size(591, 70);
+            label_Line2.TabIndex = 29;
             // 
             // label_Line3
             // 
-            this.label_Line3.BackColor = System.Drawing.Color.Transparent;
-            this.label_Line3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Line3.Location = new System.Drawing.Point(77, 261);
-            this.label_Line3.Name = "label_Line3";
-            this.label_Line3.Size = new System.Drawing.Size(532, 51);
-            this.label_Line3.TabIndex = 30;
+            label_Line3.BackColor = System.Drawing.Color.Transparent;
+            label_Line3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Line3.Location = new System.Drawing.Point(86, 327);
+            label_Line3.Name = "label_Line3";
+            label_Line3.Size = new System.Drawing.Size(591, 63);
+            label_Line3.TabIndex = 30;
             // 
             // label_Line4
             // 
-            this.label_Line4.BackColor = System.Drawing.Color.Transparent;
-            this.label_Line4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Line4.Location = new System.Drawing.Point(77, 312);
-            this.label_Line4.Name = "label_Line4";
-            this.label_Line4.Size = new System.Drawing.Size(532, 53);
-            this.label_Line4.TabIndex = 31;
+            label_Line4.BackColor = System.Drawing.Color.Transparent;
+            label_Line4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Line4.Location = new System.Drawing.Point(86, 390);
+            label_Line4.Name = "label_Line4";
+            label_Line4.Size = new System.Drawing.Size(591, 67);
+            label_Line4.TabIndex = 31;
             // 
             // label_Line5
             // 
-            this.label_Line5.BackColor = System.Drawing.Color.Transparent;
-            this.label_Line5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Line5.Location = new System.Drawing.Point(77, 365);
-            this.label_Line5.Name = "label_Line5";
-            this.label_Line5.Size = new System.Drawing.Size(532, 51);
-            this.label_Line5.TabIndex = 32;
+            label_Line5.BackColor = System.Drawing.Color.Transparent;
+            label_Line5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Line5.Location = new System.Drawing.Point(86, 457);
+            label_Line5.Name = "label_Line5";
+            label_Line5.Size = new System.Drawing.Size(591, 63);
+            label_Line5.TabIndex = 32;
             // 
             // label_Line6
             // 
-            this.label_Line6.BackColor = System.Drawing.Color.Transparent;
-            this.label_Line6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Line6.Location = new System.Drawing.Point(74, 416);
-            this.label_Line6.Name = "label_Line6";
-            this.label_Line6.Size = new System.Drawing.Size(535, 61);
-            this.label_Line6.TabIndex = 33;
+            label_Line6.BackColor = System.Drawing.Color.Transparent;
+            label_Line6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Line6.Location = new System.Drawing.Point(83, 520);
+            label_Line6.Name = "label_Line6";
+            label_Line6.Size = new System.Drawing.Size(594, 77);
+            label_Line6.TabIndex = 33;
             // 
             // label_Closing
             // 
-            this.label_Closing.BackColor = System.Drawing.Color.Transparent;
-            this.label_Closing.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Closing.Location = new System.Drawing.Point(83, 477);
-            this.label_Closing.Name = "label_Closing";
-            this.label_Closing.Size = new System.Drawing.Size(539, 62);
-            this.label_Closing.TabIndex = 34;
-            this.label_Closing.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            label_Closing.BackColor = System.Drawing.Color.Transparent;
+            label_Closing.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label_Closing.Location = new System.Drawing.Point(93, 597);
+            label_Closing.Name = "label_Closing";
+            label_Closing.Size = new System.Drawing.Size(599, 77);
+            label_Closing.TabIndex = 34;
+            label_Closing.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // comboBox_Greeting
             // 
-            this.comboBox_Greeting.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox_Greeting.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox_Greeting.FormattingEnabled = true;
-            this.comboBox_Greeting.Location = new System.Drawing.Point(30, 121);
-            this.comboBox_Greeting.Name = "comboBox_Greeting";
-            this.comboBox_Greeting.Size = new System.Drawing.Size(312, 28);
-            this.comboBox_Greeting.TabIndex = 35;
-            this.comboBox_Greeting.SelectedIndexChanged += new System.EventHandler(this.GreetingChanged);
+            comboBox_Greeting.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBox_Greeting.AutoCompleteSource = AutoCompleteSource.ListItems;
+            comboBox_Greeting.FormattingEnabled = true;
+            comboBox_Greeting.Location = new System.Drawing.Point(33, 152);
+            comboBox_Greeting.Name = "comboBox_Greeting";
+            comboBox_Greeting.Size = new System.Drawing.Size(347, 33);
+            comboBox_Greeting.TabIndex = 35;
+            comboBox_Greeting.SelectedIndexChanged += GreetingChanged;
             // 
             // eReaderCCC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 809);
-            this.Controls.Add(this.label_Line1);
-            this.Controls.Add(this.comboBox_Greeting);
-            this.Controls.Add(this.label_Closing);
-            this.Controls.Add(this.label_Line6);
-            this.Controls.Add(this.label_Line5);
-            this.Controls.Add(this.label_Line4);
-            this.Controls.Add(this.label_Line3);
-            this.Controls.Add(this.label_Line2);
-            this.Controls.Add(this.label_Greeting);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox_Closing);
-            this.Controls.Add(this.header_Closing);
-            this.Controls.Add(this.textBox_Body);
-            this.Controls.Add(this.header_Body);
-            this.Controls.Add(this.header_Greeting);
-            this.Controls.Add(this.btn_GenDotCode);
-            this.Controls.Add(this.btn_SaveRAW);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox_Sender);
-            this.Controls.Add(this.header_Sender);
-            this.Controls.Add(this.comboBox_Stationery);
-            this.Controls.Add(this.header_Stationery);
-            this.Controls.Add(this.pictureBox_Stationery);
-            this.Controls.Add(this.label_Version);
-            this.Controls.Add(this.header_LetterText);
-            this.Controls.Add(this.header_Gift);
-            this.Controls.Add(this.header_ItemName);
-            this.Controls.Add(this.header_ItemID);
-            this.Controls.Add(this.textBox_ItemID);
-            this.Controls.Add(this.comboBox_ItemName);
-            this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "eReaderCCC";
-            this.Text = "AC e-Reader Character Card Creator";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Stationery)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1241, 982);
+            Controls.Add(label_Line1);
+            Controls.Add(comboBox_Greeting);
+            Controls.Add(label_Closing);
+            Controls.Add(label_Line6);
+            Controls.Add(label_Line5);
+            Controls.Add(label_Line4);
+            Controls.Add(label_Line3);
+            Controls.Add(label_Line2);
+            Controls.Add(label_Greeting);
+            Controls.Add(label9);
+            Controls.Add(textBox_Closing);
+            Controls.Add(header_Closing);
+            Controls.Add(textBox_Body);
+            Controls.Add(header_Body);
+            Controls.Add(header_Greeting);
+            Controls.Add(btn_GenDotCode);
+            Controls.Add(btn_SaveRAW);
+            Controls.Add(label5);
+            Controls.Add(comboBox_Sender);
+            Controls.Add(header_Sender);
+            Controls.Add(comboBox_Stationery);
+            Controls.Add(header_Stationery);
+            Controls.Add(pictureBox_Stationery);
+            Controls.Add(label_Version);
+            Controls.Add(header_LetterText);
+            Controls.Add(header_Gift);
+            Controls.Add(header_ItemName);
+            Controls.Add(header_ItemID);
+            Controls.Add(textBox_ItemID);
+            Controls.Add(comboBox_ItemName);
+            Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
+            Name = "eReaderCCC";
+            Text = "AC e-Reader Character Card Creator";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox_Stationery).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -670,6 +667,8 @@ namespace AC_e_Reader_Card_Creator
         private ToolStripMenuItem menu_Help;
         private ToolStripMenuItem menu_GitRepo;
         private ToolStripMenuItem menu_About;
+        private ToolStripMenuItem menu_View;
+        private ToolStripMenuItem menu_ToggleDarkMode;
     }
 }
 
