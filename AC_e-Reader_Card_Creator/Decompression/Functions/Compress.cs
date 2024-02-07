@@ -18,7 +18,7 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
 
             if(player_index != -1)
             {
-                new_greeting = greeting.Substring(0, player_index) + greeting.Substring(player_index + 8);
+                new_greeting = string.Concat(greeting.AsSpan(0, player_index), greeting.AsSpan(player_index + 8));
             }
 
             new_greeting = ACAsciiToBytes(new_greeting.PadRight(24, ' '));
@@ -37,17 +37,17 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
             else
             {
                 // failsafe -- if programmed correctly, this should never run
-                new_body = new_body.Substring(0, 384);
+                new_body = new_body[..384];
             }
 
             string new_closing = closing.PadRight(31, ' ');
             new_closing = ACAsciiToBytes(new_closing);
 
             Dictionary<string, string> StationeryMappings = ReadMappings(Common.STATIONERY_LIST);
-            string new_stationery = StationeryMappings[stationery].Substring(2);
+            string new_stationery = StationeryMappings[stationery][2..];
 
             Dictionary<string, string> SenderMappings = ReadMappings(Common.SENDER_LIST);
-            string new_sender = SenderMappings[sender].Substring(2);
+            string new_sender = SenderMappings[sender][2..];
 
             string final = player_index.ToString("X2") + Random2ByteHex();
 
@@ -57,7 +57,7 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
             string filePath = Common.DECOMPRESSED_GCN;
             File.WriteAllBytes(filePath, body_bytes);
 
-            ProcessStartInfo dec_to_vpk = new ProcessStartInfo
+            ProcessStartInfo dec_to_vpk = new()
             {
                 FileName = Common.NEVPK,
                 Arguments = Common.NEVPK_ARGS_COMP(Common.DECOMPRESSED_GCN),
@@ -72,7 +72,7 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
 
         private static string Random2ByteHex()
         {
-            Random random = new Random();
+            Random random = new();
             int randomNumber = random.Next(0, 130);
             return randomNumber.ToString("X4");
         }
@@ -84,9 +84,9 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                 File.Delete(Common.COMPRESSED_BIN);
             }
 
-            string[] VPKfiles = { Common.VPK_HEADER, Common.VPK_GBA, Common.VPK_GCN };
+            string[] VPKfiles = [Common.VPK_HEADER, Common.VPK_GBA, Common.VPK_GCN];
 
-            using (FileStream NewBIN = new FileStream(Common.COMPRESSED_BIN, FileMode.CreateNew))
+            using (FileStream NewBIN = new(Common.COMPRESSED_BIN, FileMode.CreateNew))
             {
                 foreach (var sourceFile in VPKfiles)
                 {
@@ -107,20 +107,21 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                 }
             }
 
-            ProcessStartInfo fix_header_checksums = new ProcessStartInfo(Common.HEADERFIX, $"\"{Common.COMPRESSED_BIN}\"")
+            ProcessStartInfo fix_header_checksums = new(Common.HEADERFIX, $"\"{Common.COMPRESSED_BIN}\"")
             {
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
                 CreateNoWindow = true
             };
-            using (Process process = Process.Start(fix_header_checksums)) { process.WaitForExit(); }
+            using Process process = Process.Start(fix_header_checksums);
+            process.WaitForExit();
         }
 
         public static void BINtoRAW(bool custom)
         {
             if (custom)
             {
-                SaveFileDialog saveRAWFile = new SaveFileDialog
+                SaveFileDialog saveRAWFile = new()
                 {
                     Filter = "RAW files (*.raw)|*.raw",
                     Title = "Save .RAW",
@@ -128,7 +129,7 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                 };
                 if (saveRAWFile.ShowDialog() == DialogResult.OK)
                 {
-                    ProcessStartInfo bin_to_raw = new ProcessStartInfo
+                    ProcessStartInfo bin_to_raw = new()
                     {
                         FileName = Common.NEDCENC,
                         Arguments = Common.NEDCENC_ARGS_COMP(saveRAWFile.FileName),
@@ -136,12 +137,13 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                         RedirectStandardOutput = true,
                         CreateNoWindow = true
                     };
-                    using (Process process = Process.Start(bin_to_raw)) { process.WaitForExit(); }
+                    using Process process = Process.Start(bin_to_raw);
+                    process.WaitForExit();
                 }
             }
             else
             {
-                ProcessStartInfo bin_to_raw = new ProcessStartInfo
+                ProcessStartInfo bin_to_raw = new()
                 {
                     FileName = Common.NEDCENC,
                     Arguments = Common.NEDCENC_ARGS_COMP(Common.RAW_ECARD),
@@ -149,7 +151,8 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                     RedirectStandardOutput = true,
                     CreateNoWindow = true
                 };
-                using (Process process = Process.Start(bin_to_raw)) { process.WaitForExit(); }
+                using Process process = Process.Start(bin_to_raw);
+                process.WaitForExit();
             }
         }
 
@@ -173,7 +176,7 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
         {
             try
             {
-                FileInfo fileInfo = new FileInfo(Common.VPK_GCN);
+                FileInfo fileInfo = new(Common.VPK_GCN);
                 long GCN_VPK_Length = 0;
 
                 if (fileInfo.Exists)
@@ -203,8 +206,8 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
 
                 byte[] GCN_FileSize_Checksum = HexStringToByteArray(GCN_VPK_Hex_Length);
                
-                fileContents[fileContents.Length - 2] = GCN_FileSize_Checksum[1];
-                fileContents[fileContents.Length - 1] = GCN_FileSize_Checksum[0];
+                fileContents[^2] = GCN_FileSize_Checksum[1];
+                fileContents[^1] = GCN_FileSize_Checksum[0];
 
                 File.WriteAllBytes(Common.VPK_GBA, fileContents);
             }
@@ -230,9 +233,9 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                 }
                 else if (textElement.Length == 1)
                 {
-                    if (map.ContainsKey(textElement))
+                    if (map.TryGetValue(textElement, out string value))
                     {
-                        sb.Append(map[textElement].Substring(2));
+                        sb.Append(value[2..]);
                     }
                     else
                     {
@@ -248,9 +251,9 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                         }
                     }
                 }
-                else if (map.ContainsKey(textElement))
+                else if (map.TryGetValue(textElement, out string value))
                 {
-                    sb.Append(map[textElement].Substring(2));
+                    sb.Append(value.AsSpan(2));
                 }
                 else
                 {

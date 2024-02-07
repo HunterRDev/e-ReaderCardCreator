@@ -10,8 +10,8 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
     {
         public static Dictionary<string, string> GetData()
         {
-            byte[] GCN_Letter_Bytes = { };
-            Dictionary<string, string> letterData = new Dictionary<string, string>();
+            byte[] GCN_Letter_Bytes = [];
+            Dictionary<string, string> letterData = [];
 
             try
             {
@@ -36,15 +36,15 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
             string letter_closing = GetStringInRange(letter_contents, 216, 246).Trim();
             letterData.Add("letter_closing", letter_closing);
 
-            byte[] stationeryID_bytes = { GCN_Letter_Bytes[247], GCN_Letter_Bytes[248] };
+            byte[] stationeryID_bytes = [ GCN_Letter_Bytes[247], GCN_Letter_Bytes[248] ];
             string stationeryID = BytesToHex(stationeryID_bytes).Replace(" ", "");
             letterData.Add("letter_stationery", stationeryID);
 
-            byte[] giftID_bytes = { GCN_Letter_Bytes[249], GCN_Letter_Bytes[250] };
+            byte[] giftID_bytes = [ GCN_Letter_Bytes[249], GCN_Letter_Bytes[250] ];
             string giftID = BytesToHex(giftID_bytes).Replace(" ", "");
             letterData.Add("letter_gift", giftID);
 
-            byte[] senderID_bytes = { GCN_Letter_Bytes[251], GCN_Letter_Bytes[252] };
+            byte[] senderID_bytes = [ GCN_Letter_Bytes[251], GCN_Letter_Bytes[252] ];
             string senderID = BytesToHex(senderID_bytes).Replace(" ","");
             letterData.Add("letter_sender", senderID);
 
@@ -53,14 +53,14 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
 
         public static string ConvertBytesToACAscii(byte[] byteArray)
         {
-            StringBuilder result = new StringBuilder();
+            StringBuilder result = new();
 
             foreach (byte b in byteArray)
             {
                 // handles newline
                 if (b == 0xCD)
                 {
-                    result.Append("\n");
+                    result.Append('\n');
                 }
                 // handles standard ASCII conversion
                 else if (b >= 32 && b <= 127)
@@ -77,7 +77,7 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                 }
                 else
                 {
-                    result.Append("-");
+                    result.Append('-');
                 }
             }
 
@@ -103,7 +103,7 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                 return letter;
             }
 
-            return letter.Substring(0, 24);
+            return letter[..24];
         }
 
         public static string GetStringInRange(string letter, int startIndex, int endIndex)
@@ -116,7 +116,7 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
 
             if (startIndex < 0 || endIndex >= letter.Length || startIndex > endIndex)
             {
-                throw new ArgumentOutOfRangeException("Start or end index is out of range.");
+                throw new ArgumentException("No valid range to get string");
             }
 
             int length = endIndex - startIndex + 1;
@@ -131,12 +131,12 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                 return revisedGreeting;
             }
 
-            return greeting.Substring(0, index) + " <Player>" + greeting.Substring(index + 1);
+            return string.Concat(greeting.AsSpan(0, index), " <Player>", greeting.AsSpan(index + 1));
         }
 
         public static string BytesToHex(byte[] byteArray)
         {
-            StringBuilder result = new StringBuilder();
+            StringBuilder result = new();
 
             foreach (byte b in byteArray)
             {
