@@ -17,6 +17,7 @@ namespace AC_e_Reader_Card_Creator
         private readonly Dictionary<string, string> itemIDs = new Dictionary<string, string>();
         private readonly Dictionary<string, int[]> stationeryFontRGB = new Dictionary<string, int[]>();
         private readonly PrivateFontCollection AC_Letter_Font = new PrivateFontCollection();
+        private bool isDarkModeEnabled = false;
 
         public eReaderCCC()
         {
@@ -534,20 +535,13 @@ namespace AC_e_Reader_Card_Creator
             MessageBox.Show(Common.CREDIT, "e-Reader Character Card Creator");
         }
 
-        private void eReaderCCC_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private bool isDarkModeEnabled = false;
-
-        private void enableDarkModeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ToggleDarkMode(object sender, EventArgs e)
         {
             isDarkModeEnabled = !isDarkModeEnabled;
 
-            this.BackColor = isDarkModeEnabled ? Color.FromArgb(31, 31, 31) : Color.White;
+            BackColor = isDarkModeEnabled ? Color.FromArgb(40, 40, 40) : SystemColors.Control;
 
-            foreach (Control control in this.Controls)
+            foreach (Control control in Controls)
             {
                 if (control is ToolStrip)
                 {
@@ -556,7 +550,7 @@ namespace AC_e_Reader_Card_Creator
 
                 if (isDarkModeEnabled)
                 {
-                    control.BackColor = Color.FromArgb(31, 31, 31);
+                    control.BackColor = Color.FromArgb(40, 40, 40);
                     control.ForeColor = Color.FromArgb(255, 255, 255);
 
                     if (control is TextBox textBox)
@@ -570,21 +564,23 @@ namespace AC_e_Reader_Card_Creator
                     }
                     else if (control is ComboBox comboBox)
                     {
-                        comboBox.BackColor = Color.White;
-                        comboBox.ForeColor = Color.Black;
+                        comboBox.BackColor = SystemColors.Window;
+                        comboBox.ForeColor = SystemColors.ControlText;
                     }
                 }
                 else
                 {
-                    control.BackColor = Color.White;
-                    control.ForeColor = Color.Black;
+                    control.BackColor = SystemColors.Control;
+                    control.ForeColor = SystemColors.ControlText;
 
                     if (control is TextBox textBox)
                     {
-                        textBox.BorderStyle = BorderStyle.None;
+                        textBox.BackColor = Color.White;
+                        textBox.BorderStyle = BorderStyle.Fixed3D;
                     }
                     else if (control is Button button)
                     {
+                        button.BackColor = Color.White;
                         button.FlatStyle = FlatStyle.Standard;
                         button.FlatAppearance.BorderColor = Color.White;
                     }

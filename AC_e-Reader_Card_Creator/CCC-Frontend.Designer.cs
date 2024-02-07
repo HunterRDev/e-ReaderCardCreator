@@ -40,11 +40,11 @@ namespace AC_e_Reader_Card_Creator
             editToolStripMenuItem1 = new ToolStripMenuItem();
             menu_ClearInputs = new ToolStripMenuItem();
             menu_OpenFileDir = new ToolStripMenuItem();
+            menu_View = new ToolStripMenuItem();
+            menu_ToggleDarkMode = new ToolStripMenuItem();
             menu_Help = new ToolStripMenuItem();
             menu_GitRepo = new ToolStripMenuItem();
             menu_About = new ToolStripMenuItem();
-            viewToolStripMenuItem = new ToolStripMenuItem();
-            enableDarkModeToolStripMenuItem = new ToolStripMenuItem();
             fileToolStripMenuItem = new ToolStripMenuItem();
             saveToolStripMenuItem = new ToolStripMenuItem();
             openToolStripMenuItem = new ToolStripMenuItem();
@@ -91,21 +91,19 @@ namespace AC_e_Reader_Card_Creator
             comboBox_ItemName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBox_ItemName.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBox_ItemName.FormattingEnabled = true;
-            comboBox_ItemName.Location = new System.Drawing.Point(116, 551);
-            comboBox_ItemName.Margin = new Padding(2);
+            comboBox_ItemName.Location = new System.Drawing.Point(166, 918);
             comboBox_ItemName.Name = "comboBox_ItemName";
-            comboBox_ItemName.Size = new System.Drawing.Size(152, 23);
+            comboBox_ItemName.Size = new System.Drawing.Size(215, 33);
             comboBox_ItemName.TabIndex = 0;
             comboBox_ItemName.SelectedIndexChanged += ItemNameChanged;
             // 
             // textBox_ItemID
             // 
             textBox_ItemID.CharacterCasing = CharacterCasing.Upper;
-            textBox_ItemID.Location = new System.Drawing.Point(43, 551);
-            textBox_ItemID.Margin = new Padding(2);
+            textBox_ItemID.Location = new System.Drawing.Point(61, 918);
             textBox_ItemID.MaxLength = 4;
             textBox_ItemID.Name = "textBox_ItemID";
-            textBox_ItemID.Size = new System.Drawing.Size(69, 23);
+            textBox_ItemID.Size = new System.Drawing.Size(97, 31);
             textBox_ItemID.TabIndex = 1;
             textBox_ItemID.TextChanged += ItemIDChanged;
             textBox_ItemID.KeyPress += ItemIDKeyPress;
@@ -114,20 +112,18 @@ namespace AC_e_Reader_Card_Creator
             // header_ItemID
             // 
             header_ItemID.AutoSize = true;
-            header_ItemID.Location = new System.Drawing.Point(22, 534);
-            header_ItemID.Margin = new Padding(2, 0, 2, 0);
+            header_ItemID.Location = new System.Drawing.Point(31, 890);
             header_ItemID.Name = "header_ItemID";
-            header_ItemID.Size = new System.Drawing.Size(45, 15);
+            header_ItemID.Size = new System.Drawing.Size(71, 25);
             header_ItemID.TabIndex = 2;
             header_ItemID.Text = "Item ID";
             // 
             // header_ItemName
             // 
             header_ItemName.AutoSize = true;
-            header_ItemName.Location = new System.Drawing.Point(113, 534);
-            header_ItemName.Margin = new Padding(2, 0, 2, 0);
+            header_ItemName.Location = new System.Drawing.Point(161, 890);
             header_ItemName.Name = "header_ItemName";
-            header_ItemName.Size = new System.Drawing.Size(66, 15);
+            header_ItemName.Size = new System.Drawing.Size(100, 25);
             header_ItemName.TabIndex = 3;
             header_ItemName.Text = "Item Name";
             // 
@@ -135,10 +131,9 @@ namespace AC_e_Reader_Card_Creator
             // 
             header_Gift.AutoSize = true;
             header_Gift.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            header_Gift.Location = new System.Drawing.Point(19, 505);
-            header_Gift.Margin = new Padding(2, 0, 2, 0);
+            header_Gift.Location = new System.Drawing.Point(27, 842);
             header_Gift.Name = "header_Gift";
-            header_Gift.Size = new System.Drawing.Size(107, 19);
+            header_Gift.Size = new System.Drawing.Size(164, 29);
             header_Gift.TabIndex = 4;
             header_Gift.Text = "Attached Gift";
             // 
@@ -146,21 +141,20 @@ namespace AC_e_Reader_Card_Creator
             // 
             header_LetterText.AutoSize = true;
             header_LetterText.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            header_LetterText.Location = new System.Drawing.Point(19, 44);
-            header_LetterText.Margin = new Padding(2, 0, 2, 0);
+            header_LetterText.Location = new System.Drawing.Point(27, 73);
             header_LetterText.Name = "header_LetterText";
-            header_LetterText.Size = new System.Drawing.Size(89, 19);
+            header_LetterText.Size = new System.Drawing.Size(133, 29);
             header_LetterText.TabIndex = 6;
             header_LetterText.Text = "Letter Text";
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem1, editToolStripMenuItem1, menu_Help, viewToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem1, editToolStripMenuItem1, menu_View, menu_Help });
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new System.Drawing.Size(869, 24);
+            menuStrip1.Padding = new Padding(7, 3, 0, 3);
+            menuStrip1.Size = new System.Drawing.Size(1241, 35);
             menuStrip1.TabIndex = 8;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -168,20 +162,20 @@ namespace AC_e_Reader_Card_Creator
             // 
             fileToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { menu_FileNew, menu_FileOpen });
             fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-            fileToolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            fileToolStripMenuItem1.Size = new System.Drawing.Size(54, 29);
             fileToolStripMenuItem1.Text = "File";
             // 
             // menu_FileNew
             // 
             menu_FileNew.DropDownItems.AddRange(new ToolStripItem[] { menu_NewCharCard });
             menu_FileNew.Name = "menu_FileNew";
-            menu_FileNew.Size = new System.Drawing.Size(103, 22);
+            menu_FileNew.Size = new System.Drawing.Size(158, 34);
             menu_FileNew.Text = "New";
             // 
             // menu_NewCharCard
             // 
             menu_NewCharCard.Name = "menu_NewCharCard";
-            menu_NewCharCard.Size = new System.Drawing.Size(180, 22);
+            menu_NewCharCard.Size = new System.Drawing.Size(268, 34);
             menu_NewCharCard.Text = "Character Card (AC)";
             menu_NewCharCard.Click += MenuNewCard;
             // 
@@ -189,13 +183,13 @@ namespace AC_e_Reader_Card_Creator
             // 
             menu_FileOpen.DropDownItems.AddRange(new ToolStripItem[] { menu_OpenCharCard });
             menu_FileOpen.Name = "menu_FileOpen";
-            menu_FileOpen.Size = new System.Drawing.Size(103, 22);
+            menu_FileOpen.Size = new System.Drawing.Size(158, 34);
             menu_FileOpen.Text = "Open";
             // 
             // menu_OpenCharCard
             // 
             menu_OpenCharCard.Name = "menu_OpenCharCard";
-            menu_OpenCharCard.Size = new System.Drawing.Size(180, 22);
+            menu_OpenCharCard.Size = new System.Drawing.Size(268, 34);
             menu_OpenCharCard.Text = "Character Card (AC)";
             menu_OpenCharCard.Click += OpenCharCard;
             // 
@@ -203,57 +197,57 @@ namespace AC_e_Reader_Card_Creator
             // 
             editToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { menu_ClearInputs, menu_OpenFileDir });
             editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            editToolStripMenuItem1.Size = new System.Drawing.Size(39, 20);
+            editToolStripMenuItem1.Size = new System.Drawing.Size(58, 29);
             editToolStripMenuItem1.Text = "Edit";
             // 
             // menu_ClearInputs
             // 
             menu_ClearInputs.Name = "menu_ClearInputs";
-            menu_ClearInputs.Size = new System.Drawing.Size(175, 22);
+            menu_ClearInputs.Size = new System.Drawing.Size(266, 34);
             menu_ClearInputs.Text = "Clear Inputs";
             menu_ClearInputs.Click += MenuClearValues;
             // 
             // menu_OpenFileDir
             // 
             menu_OpenFileDir.Name = "menu_OpenFileDir";
-            menu_OpenFileDir.Size = new System.Drawing.Size(175, 22);
+            menu_OpenFileDir.Size = new System.Drawing.Size(266, 34);
             menu_OpenFileDir.Text = "Open File Directory";
             menu_OpenFileDir.Click += OpenDecompressedFileDir;
+            // 
+            // menu_View
+            // 
+            menu_View.DropDownItems.AddRange(new ToolStripItem[] { menu_ToggleDarkMode });
+            menu_View.Name = "menu_View";
+            menu_View.Size = new System.Drawing.Size(65, 29);
+            menu_View.Text = "View";
+            // 
+            // menu_ToggleDarkMode
+            // 
+            menu_ToggleDarkMode.Name = "menu_ToggleDarkMode";
+            menu_ToggleDarkMode.Size = new System.Drawing.Size(261, 34);
+            menu_ToggleDarkMode.Text = "Toggle Dark Mode";
+            menu_ToggleDarkMode.Click += ToggleDarkMode;
             // 
             // menu_Help
             // 
             menu_Help.DropDownItems.AddRange(new ToolStripItem[] { menu_GitRepo, menu_About });
             menu_Help.Name = "menu_Help";
-            menu_Help.Size = new System.Drawing.Size(44, 20);
+            menu_Help.Size = new System.Drawing.Size(65, 29);
             menu_Help.Text = "Help";
             // 
             // menu_GitRepo
             // 
             menu_GitRepo.Name = "menu_GitRepo";
-            menu_GitRepo.Size = new System.Drawing.Size(142, 22);
+            menu_GitRepo.Size = new System.Drawing.Size(216, 34);
             menu_GitRepo.Text = "GitHub Repo";
             menu_GitRepo.Click += GitRepoClick;
             // 
             // menu_About
             // 
             menu_About.Name = "menu_About";
-            menu_About.Size = new System.Drawing.Size(142, 22);
+            menu_About.Size = new System.Drawing.Size(216, 34);
             menu_About.Text = "About";
             menu_About.Click += AboutClick;
-            // 
-            // viewToolStripMenuItem
-            // 
-            viewToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { enableDarkModeToolStripMenuItem });
-            viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            viewToolStripMenuItem.Text = "View";
-            // 
-            // enableDarkModeToolStripMenuItem
-            // 
-            enableDarkModeToolStripMenuItem.Name = "enableDarkModeToolStripMenuItem";
-            enableDarkModeToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            enableDarkModeToolStripMenuItem.Text = "Enable Dark Mode";
-            enableDarkModeToolStripMenuItem.Click += enableDarkModeToolStripMenuItem_Click;
             // 
             // fileToolStripMenuItem
             // 
@@ -265,25 +259,25 @@ namespace AC_e_Reader_Card_Creator
             // saveToolStripMenuItem
             // 
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            saveToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
             saveToolStripMenuItem.Text = "New";
             // 
             // openToolStripMenuItem
             // 
             openToolStripMenuItem.Name = "openToolStripMenuItem";
-            openToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            openToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
             openToolStripMenuItem.Text = "Open";
             // 
             // saveToolStripMenuItem1
             // 
             saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            saveToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
+            saveToolStripMenuItem1.Size = new System.Drawing.Size(188, 34);
             saveToolStripMenuItem1.Text = "Save";
             // 
             // saveAsToolStripMenuItem
             // 
             saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            saveAsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            saveAsToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
             saveAsToolStripMenuItem.Text = "Save As...";
             // 
             // editToolStripMenuItem
@@ -296,13 +290,13 @@ namespace AC_e_Reader_Card_Creator
             // settingsToolStripMenuItem
             // 
             settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            settingsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            settingsToolStripMenuItem.Size = new System.Drawing.Size(198, 34);
             settingsToolStripMenuItem.Text = "Settings";
             // 
             // resetToolStripMenuItem
             // 
             resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            resetToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            resetToolStripMenuItem.Size = new System.Drawing.Size(198, 34);
             resetToolStripMenuItem.Text = "Reset Card";
             // 
             // helpToolStripMenuItem
@@ -315,19 +309,19 @@ namespace AC_e_Reader_Card_Creator
             // tutorialToolStripMenuItem
             // 
             tutorialToolStripMenuItem.Name = "tutorialToolStripMenuItem";
-            tutorialToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            tutorialToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             tutorialToolStripMenuItem.Text = "Tutorial";
             // 
             // videoTutorialToolStripMenuItem
             // 
             videoTutorialToolStripMenuItem.Name = "videoTutorialToolStripMenuItem";
-            videoTutorialToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            videoTutorialToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             videoTutorialToolStripMenuItem.Text = "Video Tutorial";
             // 
             // gitHubRepositoryToolStripMenuItem
             // 
             gitHubRepositoryToolStripMenuItem.Name = "gitHubRepositoryToolStripMenuItem";
-            gitHubRepositoryToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            gitHubRepositoryToolStripMenuItem.Size = new System.Drawing.Size(260, 34);
             gitHubRepositoryToolStripMenuItem.Text = "GitHub Repository";
             // 
             // label_Version
@@ -335,20 +329,18 @@ namespace AC_e_Reader_Card_Creator
             label_Version.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label_Version.AutoSize = true;
             label_Version.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Version.Location = new System.Drawing.Point(791, 601);
-            label_Version.Margin = new Padding(2, 0, 2, 0);
+            label_Version.Location = new System.Drawing.Point(1130, 1027);
             label_Version.Name = "label_Version";
-            label_Version.Size = new System.Drawing.Size(0, 14);
+            label_Version.Size = new System.Drawing.Size(0, 18);
             label_Version.TabIndex = 9;
             // 
             // header_Stationery
             // 
             header_Stationery.AutoSize = true;
             header_Stationery.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            header_Stationery.Location = new System.Drawing.Point(19, 358);
-            header_Stationery.Margin = new Padding(2, 0, 2, 0);
+            header_Stationery.Location = new System.Drawing.Point(27, 597);
             header_Stationery.Name = "header_Stationery";
-            header_Stationery.Size = new System.Drawing.Size(87, 19);
+            header_Stationery.Size = new System.Drawing.Size(130, 29);
             header_Stationery.TabIndex = 12;
             header_Stationery.Text = "Stationery";
             // 
@@ -357,10 +349,9 @@ namespace AC_e_Reader_Card_Creator
             comboBox_Stationery.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBox_Stationery.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBox_Stationery.FormattingEnabled = true;
-            comboBox_Stationery.Location = new System.Drawing.Point(24, 382);
-            comboBox_Stationery.Margin = new Padding(2);
+            comboBox_Stationery.Location = new System.Drawing.Point(34, 637);
             comboBox_Stationery.Name = "comboBox_Stationery";
-            comboBox_Stationery.Size = new System.Drawing.Size(244, 23);
+            comboBox_Stationery.Size = new System.Drawing.Size(347, 33);
             comboBox_Stationery.TabIndex = 13;
             comboBox_Stationery.SelectedIndexChanged += StationeryChanged;
             // 
@@ -368,10 +359,9 @@ namespace AC_e_Reader_Card_Creator
             // 
             header_Sender.AutoSize = true;
             header_Sender.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            header_Sender.Location = new System.Drawing.Point(19, 427);
-            header_Sender.Margin = new Padding(2, 0, 2, 0);
+            header_Sender.Location = new System.Drawing.Point(27, 712);
             header_Sender.Name = "header_Sender";
-            header_Sender.Size = new System.Drawing.Size(64, 19);
+            header_Sender.Size = new System.Drawing.Size(94, 29);
             header_Sender.TabIndex = 14;
             header_Sender.Text = "Sender";
             // 
@@ -380,73 +370,68 @@ namespace AC_e_Reader_Card_Creator
             comboBox_Sender.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBox_Sender.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBox_Sender.FormattingEnabled = true;
-            comboBox_Sender.Location = new System.Drawing.Point(24, 452);
-            comboBox_Sender.Margin = new Padding(2);
+            comboBox_Sender.Location = new System.Drawing.Point(34, 753);
             comboBox_Sender.Name = "comboBox_Sender";
-            comboBox_Sender.Size = new System.Drawing.Size(244, 23);
+            comboBox_Sender.Size = new System.Drawing.Size(347, 33);
             comboBox_Sender.TabIndex = 15;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            label5.Location = new System.Drawing.Point(299, 44);
-            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Location = new System.Drawing.Point(427, 73);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(70, 19);
+            label5.Size = new System.Drawing.Size(103, 29);
             label5.TabIndex = 16;
             label5.Text = "Preview";
             // 
             // btn_SaveRAW
             // 
-            btn_SaveRAW.Location = new System.Drawing.Point(735, 543);
-            btn_SaveRAW.Margin = new Padding(2);
+            btn_SaveRAW.BackColor = System.Drawing.Color.White;
+            btn_SaveRAW.Location = new System.Drawing.Point(1050, 905);
             btn_SaveRAW.Name = "btn_SaveRAW";
-            btn_SaveRAW.Size = new System.Drawing.Size(107, 28);
+            btn_SaveRAW.Size = new System.Drawing.Size(153, 47);
             btn_SaveRAW.TabIndex = 17;
             btn_SaveRAW.Text = "Save .RAW";
-            btn_SaveRAW.UseVisualStyleBackColor = true;
+            btn_SaveRAW.UseVisualStyleBackColor = false;
             btn_SaveRAW.Click += SaveRAW;
             // 
             // btn_GenDotCode
             // 
-            btn_GenDotCode.Location = new System.Drawing.Point(580, 543);
-            btn_GenDotCode.Margin = new Padding(2);
+            btn_GenDotCode.BackColor = System.Drawing.Color.White;
+            btn_GenDotCode.Location = new System.Drawing.Point(829, 905);
             btn_GenDotCode.Name = "btn_GenDotCode";
-            btn_GenDotCode.Size = new System.Drawing.Size(150, 28);
+            btn_GenDotCode.Size = new System.Drawing.Size(214, 47);
             btn_GenDotCode.TabIndex = 18;
             btn_GenDotCode.Text = "Generate Dot Code";
-            btn_GenDotCode.UseVisualStyleBackColor = true;
+            btn_GenDotCode.UseVisualStyleBackColor = false;
             btn_GenDotCode.Click += GenerateDotCodeClick;
             // 
             // header_Greeting
             // 
             header_Greeting.AutoSize = true;
-            header_Greeting.Location = new System.Drawing.Point(20, 74);
-            header_Greeting.Margin = new Padding(2, 0, 2, 0);
+            header_Greeting.Location = new System.Drawing.Point(29, 123);
             header_Greeting.Name = "header_Greeting";
-            header_Greeting.Size = new System.Drawing.Size(52, 15);
+            header_Greeting.Size = new System.Drawing.Size(79, 25);
             header_Greeting.TabIndex = 19;
             header_Greeting.Text = "Greeting";
             // 
             // header_Body
             // 
             header_Body.AutoSize = true;
-            header_Body.Location = new System.Drawing.Point(20, 128);
-            header_Body.Margin = new Padding(2, 0, 2, 0);
+            header_Body.Location = new System.Drawing.Point(29, 213);
             header_Body.Name = "header_Body";
-            header_Body.Size = new System.Drawing.Size(34, 15);
+            header_Body.Size = new System.Drawing.Size(53, 25);
             header_Body.TabIndex = 20;
             header_Body.Text = "Body";
             // 
             // textBox_Body
             // 
-            textBox_Body.Location = new System.Drawing.Point(23, 145);
-            textBox_Body.Margin = new Padding(2);
+            textBox_Body.Location = new System.Drawing.Point(33, 242);
             textBox_Body.MaxLength = 180;
             textBox_Body.Multiline = true;
             textBox_Body.Name = "textBox_Body";
-            textBox_Body.Size = new System.Drawing.Size(244, 142);
+            textBox_Body.Size = new System.Drawing.Size(347, 234);
             textBox_Body.TabIndex = 21;
             textBox_Body.TextChanged += LetterBodyChanged;
             textBox_Body.KeyPress += LetterBodyKeyPress;
@@ -454,19 +439,17 @@ namespace AC_e_Reader_Card_Creator
             // header_Closing
             // 
             header_Closing.AutoSize = true;
-            header_Closing.Location = new System.Drawing.Point(22, 299);
-            header_Closing.Margin = new Padding(2, 0, 2, 0);
+            header_Closing.Location = new System.Drawing.Point(31, 498);
             header_Closing.Name = "header_Closing";
-            header_Closing.Size = new System.Drawing.Size(47, 15);
+            header_Closing.Size = new System.Drawing.Size(71, 25);
             header_Closing.TabIndex = 22;
             header_Closing.Text = "Closing";
             // 
             // textBox_Closing
             // 
-            textBox_Closing.Location = new System.Drawing.Point(24, 316);
-            textBox_Closing.Margin = new Padding(2);
+            textBox_Closing.Location = new System.Drawing.Point(34, 527);
             textBox_Closing.Name = "textBox_Closing";
-            textBox_Closing.Size = new System.Drawing.Size(244, 23);
+            textBox_Closing.Size = new System.Drawing.Size(347, 31);
             textBox_Closing.TabIndex = 23;
             textBox_Closing.TextChanged += ClosingChanged;
             // 
@@ -478,10 +461,9 @@ namespace AC_e_Reader_Card_Creator
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(22, 556);
-            label9.Margin = new Padding(2, 0, 2, 0);
+            label9.Location = new System.Drawing.Point(31, 927);
             label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(19, 15);
+            label9.Size = new System.Drawing.Size(30, 25);
             label9.TabIndex = 25;
             label9.Text = "0x";
             // 
@@ -490,20 +472,18 @@ namespace AC_e_Reader_Card_Creator
             label_Greeting.AutoSize = true;
             label_Greeting.BackColor = System.Drawing.Color.Transparent;
             label_Greeting.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Greeting.Location = new System.Drawing.Point(60, 43);
-            label_Greeting.Margin = new Padding(2, 0, 2, 0);
+            label_Greeting.Location = new System.Drawing.Point(86, 72);
             label_Greeting.Name = "label_Greeting";
-            label_Greeting.Size = new System.Drawing.Size(0, 24);
+            label_Greeting.Size = new System.Drawing.Size(0, 32);
             label_Greeting.TabIndex = 27;
             // 
             // pictureBox_Stationery
             // 
             pictureBox_Stationery.BackgroundImage = Properties.Resources.Airmail_Paper_PG;
             pictureBox_Stationery.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox_Stationery.Location = new System.Drawing.Point(303, 73);
-            pictureBox_Stationery.Margin = new Padding(2);
+            pictureBox_Stationery.Location = new System.Drawing.Point(433, 122);
             pictureBox_Stationery.Name = "pictureBox_Stationery";
-            pictureBox_Stationery.Size = new System.Drawing.Size(540, 454);
+            pictureBox_Stationery.Size = new System.Drawing.Size(771, 757);
             pictureBox_Stationery.TabIndex = 10;
             pictureBox_Stationery.TabStop = false;
             // 
@@ -511,70 +491,63 @@ namespace AC_e_Reader_Card_Creator
             // 
             label_Line1.BackColor = System.Drawing.Color.Transparent;
             label_Line1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Line1.Location = new System.Drawing.Point(60, 114);
-            label_Line1.Margin = new Padding(2, 0, 2, 0);
+            label_Line1.Location = new System.Drawing.Point(86, 190);
             label_Line1.Name = "label_Line1";
-            label_Line1.Size = new System.Drawing.Size(414, 40);
+            label_Line1.Size = new System.Drawing.Size(591, 67);
             label_Line1.TabIndex = 28;
             // 
             // label_Line2
             // 
             label_Line2.BackColor = System.Drawing.Color.Transparent;
             label_Line2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Line2.Location = new System.Drawing.Point(60, 154);
-            label_Line2.Margin = new Padding(2, 0, 2, 0);
+            label_Line2.Location = new System.Drawing.Point(86, 257);
             label_Line2.Name = "label_Line2";
-            label_Line2.Size = new System.Drawing.Size(414, 42);
+            label_Line2.Size = new System.Drawing.Size(591, 70);
             label_Line2.TabIndex = 29;
             // 
             // label_Line3
             // 
             label_Line3.BackColor = System.Drawing.Color.Transparent;
             label_Line3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Line3.Location = new System.Drawing.Point(60, 196);
-            label_Line3.Margin = new Padding(2, 0, 2, 0);
+            label_Line3.Location = new System.Drawing.Point(86, 327);
             label_Line3.Name = "label_Line3";
-            label_Line3.Size = new System.Drawing.Size(414, 38);
+            label_Line3.Size = new System.Drawing.Size(591, 63);
             label_Line3.TabIndex = 30;
             // 
             // label_Line4
             // 
             label_Line4.BackColor = System.Drawing.Color.Transparent;
             label_Line4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Line4.Location = new System.Drawing.Point(60, 234);
-            label_Line4.Margin = new Padding(2, 0, 2, 0);
+            label_Line4.Location = new System.Drawing.Point(86, 390);
             label_Line4.Name = "label_Line4";
-            label_Line4.Size = new System.Drawing.Size(414, 40);
+            label_Line4.Size = new System.Drawing.Size(591, 67);
             label_Line4.TabIndex = 31;
             // 
             // label_Line5
             // 
             label_Line5.BackColor = System.Drawing.Color.Transparent;
             label_Line5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Line5.Location = new System.Drawing.Point(60, 274);
-            label_Line5.Margin = new Padding(2, 0, 2, 0);
+            label_Line5.Location = new System.Drawing.Point(86, 457);
             label_Line5.Name = "label_Line5";
-            label_Line5.Size = new System.Drawing.Size(414, 38);
+            label_Line5.Size = new System.Drawing.Size(591, 63);
             label_Line5.TabIndex = 32;
             // 
             // label_Line6
             // 
             label_Line6.BackColor = System.Drawing.Color.Transparent;
             label_Line6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Line6.Location = new System.Drawing.Point(58, 312);
-            label_Line6.Margin = new Padding(2, 0, 2, 0);
+            label_Line6.Location = new System.Drawing.Point(83, 520);
             label_Line6.Name = "label_Line6";
-            label_Line6.Size = new System.Drawing.Size(416, 46);
+            label_Line6.Size = new System.Drawing.Size(594, 77);
             label_Line6.TabIndex = 33;
             // 
             // label_Closing
             // 
             label_Closing.BackColor = System.Drawing.Color.Transparent;
             label_Closing.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Closing.Location = new System.Drawing.Point(65, 358);
-            label_Closing.Margin = new Padding(2, 0, 2, 0);
+            label_Closing.Location = new System.Drawing.Point(93, 597);
             label_Closing.Name = "label_Closing";
-            label_Closing.Size = new System.Drawing.Size(419, 46);
+            label_Closing.Size = new System.Drawing.Size(599, 77);
             label_Closing.TabIndex = 34;
             label_Closing.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
@@ -583,18 +556,17 @@ namespace AC_e_Reader_Card_Creator
             comboBox_Greeting.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBox_Greeting.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBox_Greeting.FormattingEnabled = true;
-            comboBox_Greeting.Location = new System.Drawing.Point(23, 91);
-            comboBox_Greeting.Margin = new Padding(2);
+            comboBox_Greeting.Location = new System.Drawing.Point(33, 152);
             comboBox_Greeting.Name = "comboBox_Greeting";
-            comboBox_Greeting.Size = new System.Drawing.Size(244, 23);
+            comboBox_Greeting.Size = new System.Drawing.Size(347, 33);
             comboBox_Greeting.TabIndex = 35;
             comboBox_Greeting.SelectedIndexChanged += GreetingChanged;
             // 
             // eReaderCCC
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(869, 574);
+            ClientSize = new System.Drawing.Size(1241, 982);
             Controls.Add(label_Line1);
             Controls.Add(comboBox_Greeting);
             Controls.Add(label_Closing);
@@ -629,10 +601,8 @@ namespace AC_e_Reader_Card_Creator
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(2);
             Name = "eReaderCCC";
             Text = "AC e-Reader Character Card Creator";
-            Load += eReaderCCC_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_Stationery).EndInit();
@@ -697,8 +667,8 @@ namespace AC_e_Reader_Card_Creator
         private ToolStripMenuItem menu_Help;
         private ToolStripMenuItem menu_GitRepo;
         private ToolStripMenuItem menu_About;
-        private ToolStripMenuItem viewToolStripMenuItem;
-        private ToolStripMenuItem enableDarkModeToolStripMenuItem;
+        private ToolStripMenuItem menu_View;
+        private ToolStripMenuItem menu_ToggleDarkMode;
     }
 }
 
