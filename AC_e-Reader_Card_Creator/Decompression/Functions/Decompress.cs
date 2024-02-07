@@ -12,29 +12,27 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
     {
         public static void BINtoVPK(string filePath, byte[] delimiter, string outputDirectory)
         {
-            List<byte> buffer = new List<byte>();
+            List<byte> buffer = [];
             int chunkNumber = 1;
 
-            using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-            using (BinaryReader reader = new BinaryReader(fs))
+            using FileStream fs = new(filePath, FileMode.Open, FileAccess.Read);
+            using BinaryReader reader = new(fs);
+            while (reader.BaseStream.Position != reader.BaseStream.Length)
             {
-                while (reader.BaseStream.Position != reader.BaseStream.Length)
-                {
-                    byte b = reader.ReadByte();
-                    buffer.Add(b);
+                byte b = reader.ReadByte();
+                buffer.Add(b);
 
-                    if (buffer.Count >= delimiter.Length &&
-                        buffer.Skip(buffer.Count - delimiter.Length).SequenceEqual(delimiter))
-                    {
-                        WriteToFile(buffer.Take(buffer.Count - delimiter.Length).ToArray(), ref chunkNumber, outputDirectory, delimiter);
-                        buffer.Clear();
-                    }
-                }
-
-                if (buffer.Count > 0)
+                if (buffer.Count >= delimiter.Length &&
+                    buffer.Skip(buffer.Count - delimiter.Length).SequenceEqual(delimiter))
                 {
-                    WriteToFile(buffer.ToArray(), ref chunkNumber, outputDirectory, delimiter);
+                    WriteToFile(buffer.Take(buffer.Count - delimiter.Length).ToArray(), ref chunkNumber, outputDirectory, delimiter);
+                    buffer.Clear();
                 }
+            }
+
+            if (buffer.Count > 0)
+            {
+                WriteToFile([.. buffer], ref chunkNumber, outputDirectory, delimiter);
             }
         }
 
@@ -42,7 +40,7 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
         {
             try
             {
-                ProcessStartInfo raw_to_bin = new ProcessStartInfo
+                ProcessStartInfo raw_to_bin = new()
                 {
                     FileName = Common.NEDCENC,
                     Arguments = Common.NEDCENCE_ARGS_DECOMP(filePath),
@@ -51,7 +49,8 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                     CreateNoWindow = true
                 };
 
-                using (Process process = Process.Start(raw_to_bin)) { process.WaitForExit(); }
+                using Process process = Process.Start(raw_to_bin);
+                process.WaitForExit();
             }
             catch (Exception ex)
             {
@@ -77,7 +76,7 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                     }
                     else
                     {
-                        ProcessStartInfo vpk_to_dec = new ProcessStartInfo
+                        ProcessStartInfo vpk_to_dec = new()
                         {
                             FileName = Common.NEVPK,
                             Arguments = Common.NEVPK_ARGS_DECOMP(vpk_file, iteration),
@@ -118,7 +117,7 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                     break;
             }
             
-            using (FileStream outFile = new FileStream(fileName, FileMode.Create, FileAccess.Write))
+            using (FileStream outFile = new(fileName, FileMode.Create, FileAccess.Write))
             {
                 if (chunkNumber != 1)
                 {

@@ -49,7 +49,7 @@ namespace AC_e_Reader_Card_Creator.References
         public static string BMP_DOTCODE = @"Project Files\Decompression\eCard\bmp\dotcode";
         public static string GCN_LETTER_DATA = @"Project Files\Decompression\eCard\dec\decompressed_data_GCN.bin";
 
-        public static byte[] VPK_DELIMITER = { 0x76, 0x70, 0x6B, 0x30 }; // "vpk0"
+        public static byte[] VPK_DELIMITER = [0x76, 0x70, 0x6B, 0x30]; // "vpk0"
         public static string RAW_OUTPUT = @"Project Files\Decompression\eCard\raw\";
         public static string BMP_OUTPUT = @"Project Files\Decompression\eCard\bmp\";
         public static string VPK_OUTPUT = @"Project Files\Decompression\eCard\vpk\";
@@ -130,7 +130,7 @@ namespace AC_e_Reader_Card_Creator.References
                 letter_line.ForeColor = Color.FromArgb(fontColor[0], fontColor[1], fontColor[2]);
             }
 
-            string[] delimiter = new string[] { "\n" };
+            string[] delimiter = ["\n"];
             string[] split_letter_body = letter_body.Text.Split(delimiter, StringSplitOptions.None);
 
             int line_index = 1;

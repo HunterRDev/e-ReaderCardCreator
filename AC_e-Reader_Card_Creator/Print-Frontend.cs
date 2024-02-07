@@ -39,7 +39,7 @@ namespace AC_e_Reader_Card_Creator
 
         private void GetSelectedPrinterDPI(string printerName)
         {
-            PrinterSettings ps = new PrinterSettings
+            PrinterSettings ps = new()
             {
                 PrinterName = printerName
             };
@@ -66,9 +66,9 @@ namespace AC_e_Reader_Card_Creator
                 return;
             }
 
-            int DPI = int.Parse(comboBox_DPI.Text.Substring(0, comboBox_DPI.Text.Length - 4));
+            int DPI = int.Parse(comboBox_DPI.Text[..^4]);
 
-            SaveFileDialog saveRAWFile = new SaveFileDialog
+            SaveFileDialog saveRAWFile = new()
             {
                 Filter = "Bitmap Images (*.bmp)|*.bmp",
                 Title = "Save Dot Code (.bmp)",
@@ -77,7 +77,7 @@ namespace AC_e_Reader_Card_Creator
 
             if (saveRAWFile.ShowDialog() == DialogResult.OK)
             {
-                ProcessStartInfo raw_to_bmp = new ProcessStartInfo
+                ProcessStartInfo raw_to_bmp = new()
                 {
                     FileName = Common.RAW2BMP,
                     Arguments = Common.RAW2BMP_ARGS(saveRAWFile.FileName.Replace(".bmp", ""), DPI),
@@ -85,7 +85,8 @@ namespace AC_e_Reader_Card_Creator
                     RedirectStandardOutput = true,
                     CreateNoWindow = true
                 };
-                using (Process process = Process.Start(raw_to_bmp)) { process.WaitForExit(); }
+                using Process process = Process.Start(raw_to_bmp);
+                process.WaitForExit();
             }
         }
 
@@ -97,10 +98,10 @@ namespace AC_e_Reader_Card_Creator
                 return;
             }
 
-            int DPI = int.Parse(comboBox_DPI.Text.Substring(0, comboBox_DPI.Text.Length - 4));
+            int DPI = int.Parse(comboBox_DPI.Text[..^4]);
             MessageBox.Show($"{DPI}");
 
-            ProcessStartInfo raw_to_bmp = new ProcessStartInfo
+            ProcessStartInfo raw_to_bmp = new()
             {
                 FileName = Common.RAW2BMP,
                 Arguments = Common.RAW2BMP_ARGS(Common.BMP_DOTCODE, DPI),
@@ -116,13 +117,13 @@ namespace AC_e_Reader_Card_Creator
         private void PrintDotCode()
         {
             string selectedPrinter = comboBox_Printer.SelectedItem.ToString();
-            PrintDocument printDocument = new PrintDocument();
+            PrintDocument printDocument = new();
             printDocument.PrinterSettings.PrinterName = selectedPrinter;
 
             printDocument.PrintPage += (sender, e) =>
             {
                 Image image = Image.FromFile(Common.BMP_DOTCODE+".bmp");
-                Point loc = new Point(0, 0);
+                Point loc = new(0, 0);
                 e.Graphics.DrawImage(image, loc);
             };
 
