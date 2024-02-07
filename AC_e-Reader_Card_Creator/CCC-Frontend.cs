@@ -543,16 +543,12 @@ namespace AC_e_Reader_Card_Creator
 
         private void enableDarkModeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Toggle between dark and light modes
             isDarkModeEnabled = !isDarkModeEnabled;
 
-            // Set the background color of the form based on the mode
             this.BackColor = isDarkModeEnabled ? Color.FromArgb(31, 31, 31) : Color.White;
 
-            // Set the foreground colors for all controls on the form
             foreach (Control control in this.Controls)
             {
-                // Skip ToolStrip controls
                 if (control is ToolStrip)
                 {
                     continue;
@@ -560,11 +556,9 @@ namespace AC_e_Reader_Card_Creator
 
                 if (isDarkModeEnabled)
                 {
-                    // Set dark mode colors
                     control.BackColor = Color.FromArgb(31, 31, 31);
-                    control.ForeColor = Color.FromArgb(255, 255, 255); // White
+                    control.ForeColor = Color.FromArgb(255, 255, 255);
 
-                    // You can add logic here to set the border color for controls like textboxes, buttons, etc.
                     if (control is TextBox textBox)
                     {
                         textBox.BorderStyle = BorderStyle.FixedSingle;
@@ -572,21 +566,19 @@ namespace AC_e_Reader_Card_Creator
                     else if (control is Button button)
                     {
                         button.FlatStyle = FlatStyle.Flat;
-                        button.FlatAppearance.BorderColor = Color.FromArgb(255, 255, 255); // White
+                        button.FlatAppearance.BorderColor = Color.FromArgb(255, 255, 255);
                     }
                     else if (control is ComboBox comboBox)
                     {
                         comboBox.BackColor = Color.White;
-                        comboBox.ForeColor = Color.Black; // Set dropdown text color to black
+                        comboBox.ForeColor = Color.Black;
                     }
                 }
                 else
                 {
-                    // Revert to the original light mode colors
                     control.BackColor = Color.White;
                     control.ForeColor = Color.Black;
 
-                    // Revert border styles
                     if (control is TextBox textBox)
                     {
                         textBox.BorderStyle = BorderStyle.None;
@@ -598,9 +590,8 @@ namespace AC_e_Reader_Card_Creator
                     }
                     else if (control is ComboBox comboBox)
                     {
-                        // Set the ComboBox back to its original color if needed
                         comboBox.BackColor = SystemColors.Window;
-                        comboBox.ForeColor = SystemColors.ControlText; // Set dropdown text color to default
+                        comboBox.ForeColor = SystemColors.ControlText;
                     }
                 }
             }
