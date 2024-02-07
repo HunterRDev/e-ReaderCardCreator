@@ -38,7 +38,7 @@ namespace AC_e_Reader_Card_Creator
         private void LoadDirectories()
         {
             string[] directoryPath = { @"Project Files\Decompression\eCard", Common.RAW_OUTPUT, Common.BIN_OUTPUT, Common.VPK_OUTPUT, Common.DEC_OUTPUT, Common.BMP_OUTPUT };
-            foreach(string dir in directoryPath)
+            foreach (string dir in directoryPath)
             {
                 if (!Directory.Exists(dir))
                 {
@@ -76,7 +76,7 @@ namespace AC_e_Reader_Card_Creator
             int maxCharBody = textBox_Body.MaxLength;
             header_Body.Text = $"Body  ( {currentCharCount} / {maxCharBody} )";
 
-            List<Label> letter_labels = new List<Label> { 
+            List<Label> letter_labels = new List<Label> {
                 label_Greeting, label_Line1, label_Line2, label_Line3, label_Line4, label_Line5, label_Line6, label_Closing
             };
             int[] fontColor = stationeryFontRGB[comboBox_Stationery.Text];
@@ -95,8 +95,8 @@ namespace AC_e_Reader_Card_Creator
                     e.Handled = true;
                 }
 
-                List<Label> letter_labels = new List<Label> { 
-                    label_Greeting, label_Line1, label_Line2, label_Line3, label_Line4, label_Line5, label_Line6, label_Closing 
+                List<Label> letter_labels = new List<Label> {
+                    label_Greeting, label_Line1, label_Line2, label_Line3, label_Line4, label_Line5, label_Line6, label_Closing
                 };
                 int[] fontColor = stationeryFontRGB[comboBox_Stationery.Text];
                 Common.HandleLetterBody(letter_labels, textBox_Body, fontColor);
@@ -135,8 +135,8 @@ namespace AC_e_Reader_Card_Creator
             if (itemID.Length == 6)
             {
                 string item_name = Common.LookupListValue(itemID, Common.ITEM_LIST);
-                
-                if(item_name != null)
+
+                if (item_name != null)
                 {
                     comboBox_ItemName.SelectedItem = item_name;
                 }
@@ -165,7 +165,7 @@ namespace AC_e_Reader_Card_Creator
                         string[] stationery_RGB_s = stationery[2].Split('-');
 
                         List<int> stationery_RGB_i = new List<int>();
-                        
+
                         for (int i = 0; i < stationery_RGB_s.Length; i++)
                         {
                             stationery_RGB_i.Add(int.Parse(stationery_RGB_s[i]));
@@ -255,8 +255,8 @@ namespace AC_e_Reader_Card_Creator
                     pictureBox_Stationery.BackgroundImage = stationeryImage;
                 }
 
-                List<Label> letter_labels = new List<Label> { 
-                    label_Greeting, label_Line1, label_Line2, label_Line3, label_Line4, label_Line5, label_Line6, label_Closing 
+                List<Label> letter_labels = new List<Label> {
+                    label_Greeting, label_Line1, label_Line2, label_Line3, label_Line4, label_Line5, label_Line6, label_Closing
                 };
                 int[] fontColor = stationeryFontRGB[comboBox_Stationery.Text];
                 foreach (Label letter_line in letter_labels)
@@ -400,7 +400,7 @@ namespace AC_e_Reader_Card_Creator
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-  
+
 
         private void OpenCharCard(object sender, EventArgs e)
         {
@@ -532,6 +532,78 @@ namespace AC_e_Reader_Card_Creator
         private void AboutClick(object sender, EventArgs e)
         {
             MessageBox.Show(Common.CREDIT, "e-Reader Character Card Creator");
+        }
+
+        private void eReaderCCC_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool isDarkModeEnabled = false;
+
+        private void enableDarkModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Toggle between dark and light modes
+            isDarkModeEnabled = !isDarkModeEnabled;
+
+            // Set the background color of the form based on the mode
+            this.BackColor = isDarkModeEnabled ? Color.FromArgb(31, 31, 31) : Color.White;
+
+            // Set the foreground colors for all controls on the form
+            foreach (Control control in this.Controls)
+            {
+                // Skip ToolStrip controls
+                if (control is ToolStrip)
+                {
+                    continue;
+                }
+
+                if (isDarkModeEnabled)
+                {
+                    // Set dark mode colors
+                    control.BackColor = Color.FromArgb(31, 31, 31);
+                    control.ForeColor = Color.FromArgb(255, 255, 255); // White
+
+                    // You can add logic here to set the border color for controls like textboxes, buttons, etc.
+                    if (control is TextBox textBox)
+                    {
+                        textBox.BorderStyle = BorderStyle.FixedSingle;
+                    }
+                    else if (control is Button button)
+                    {
+                        button.FlatStyle = FlatStyle.Flat;
+                        button.FlatAppearance.BorderColor = Color.FromArgb(255, 255, 255); // White
+                    }
+                    else if (control is ComboBox comboBox)
+                    {
+                        comboBox.BackColor = Color.White;
+                        comboBox.ForeColor = Color.Black; // Set dropdown text color to black
+                    }
+                }
+                else
+                {
+                    // Revert to the original light mode colors
+                    control.BackColor = Color.White;
+                    control.ForeColor = Color.Black;
+
+                    // Revert border styles
+                    if (control is TextBox textBox)
+                    {
+                        textBox.BorderStyle = BorderStyle.None;
+                    }
+                    else if (control is Button button)
+                    {
+                        button.FlatStyle = FlatStyle.Standard;
+                        button.FlatAppearance.BorderColor = Color.White;
+                    }
+                    else if (control is ComboBox comboBox)
+                    {
+                        // Set the ComboBox back to its original color if needed
+                        comboBox.BackColor = SystemColors.Window;
+                        comboBox.ForeColor = SystemColors.ControlText; // Set dropdown text color to default
+                    }
+                }
+            }
         }
     }
 }
