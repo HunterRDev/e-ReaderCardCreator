@@ -7,7 +7,6 @@ public class PreferencesManager
     private readonly string appDataFolderPath;
     private readonly string preferenceFilePath;
 
-    // Additional color properties for dark mode
     public Color DarkModeBackColor => Color.FromArgb(40, 40, 40);
     public Color DarkModeForeColor => Color.White;
     public Color DarkModeTextBoxBackColor => Color.FromArgb(31, 31, 31);
@@ -102,7 +101,6 @@ public class PreferencesManager
                     comboBox.ForeColor = SystemColors.ControlText;
                 }
 
-                // Recursively apply theme to nested controls if any
                 if (control.Controls.Count > 0)
                 {
                     ApplyThemeToControls(control.Controls, isDarkModeEnabled);

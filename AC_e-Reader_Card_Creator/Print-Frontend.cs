@@ -70,7 +70,7 @@ namespace AC_e_Reader_Card_Creator
 
             if (ps.IsValid)
             {
-                if (pr.Kind == PrinterResolutionKind.Custom)
+                if (pr.Kind == PrinterResolutionKind.Custom).
                 {
                     label_PrinterDPI.Text = $"{pr.X} x {pr.Y} DPI";
                 }
