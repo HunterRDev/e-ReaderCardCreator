@@ -18,6 +18,7 @@ namespace AC_e_Reader_Card_Creator
         private readonly Dictionary<string, int[]> stationeryFontRGB = [];
         private readonly PrivateFontCollection AC_Letter_Font = new();
         private bool isDarkModeEnabled = false;
+        private PreferencesManager preferencesManager = new PreferencesManager("e-ReaderCardCreator");
 
         public eReaderCCC()
         {
@@ -35,8 +36,8 @@ namespace AC_e_Reader_Card_Creator
             comboBox_Greeting.SelectedIndex = 5;
             label_Greeting.Text = comboBox_Greeting.Text;
 
-            isDarkModeEnabled = ReadDarkModePreference();
-            ApplyDarkMode();
+            isDarkModeEnabled = preferencesManager.ReadDarkModePreference();
+            ApplyTheme();
         }
 
         private void LoadDirectories()
@@ -578,386 +579,25 @@ namespace AC_e_Reader_Card_Creator
         private void ToggleDarkMode(object sender, EventArgs e)
         {
             isDarkModeEnabled = !isDarkModeEnabled;
-
-            BackColor = isDarkModeEnabled ? Color.FromArgb(40, 40, 40) : SystemColors.Control;
-
-            foreach (Control control in Controls)
-            {
-                if (control is ToolStrip)
-                {
-                    continue;
-                }
-
-                if (isDarkModeEnabled)
-                {
-                    control.BackColor = Color.FromArgb(40, 40, 40);
-                    control.ForeColor = Color.White;
-
-                    if (control is TextBox textBox)
-                    {
-                        textBox.BackColor = Color.FromArgb(31, 31, 31);
-                        textBox.BorderStyle = BorderStyle.FixedSingle;
-                    }
-                    else if (control is Button button)
-                    {
-                        button.FlatStyle = FlatStyle.Flat;
-                        button.FlatAppearance.BorderColor = Color.White;
-                    }
-                    else if (control is ComboBox comboBox)
-                    {
-                        comboBox.BackColor = SystemColors.Window;
-                        comboBox.ForeColor = SystemColors.ControlText;
-                    }
-                }
-                else
-                {
-                    control.BackColor = SystemColors.Control;
-                    control.ForeColor = SystemColors.ControlText;
-
-                    if (control is TextBox textBox)
-                    {
-                        textBox.BackColor = Color.White;
-                        textBox.BorderStyle = BorderStyle.Fixed3D;
-                    }
-                    else if (control is Button button)
-                    {
-                        button.BackColor = Color.White;
-                        button.FlatStyle = FlatStyle.Standard;
-                        button.FlatAppearance.BorderColor = Color.White;
-                    }
-                    else if (control is ComboBox comboBox)
-                    {
-                        comboBox.BackColor = SystemColors.Window;
-                        comboBox.ForeColor = SystemColors.ControlText;
-                    }
-                }
-            }
-
-            SaveDarkModePreference(isDarkModeEnabled);
+            ApplyTheme();
+            preferencesManager.SaveDarkModePreference(isDarkModeEnabled);
         }
 
-        private void ApplyDarkMode()
+        private void ApplyTheme()
         {
-            BackColor = isDarkModeEnabled ? Color.FromArgb(40, 40, 40) : SystemColors.Control;
-
-            foreach (Control control in Controls)
-            {
-                if (control is ToolStrip)
-                {
-                    continue;
-                }
-
-                if (isDarkModeEnabled)
-                {
-                    control.BackColor = Color.FromArgb(40, 40, 40);
-                    control.ForeColor = Color.White;
-
-                    if (control is TextBox textBox)
-                    {
-                        textBox.BackColor = Color.FromArgb(31, 31, 31);
-                        textBox.BorderStyle = BorderStyle.FixedSingle;
-                    }
-                    else if (control is Button button)
-                    {
-                        button.FlatStyle = FlatStyle.Flat;
-                        button.FlatAppearance.BorderColor = Color.White;
-                    }
-                    else if (control is ComboBox comboBox)
-                    {
-                        comboBox.BackColor = SystemColors.Window;
-                        comboBox.ForeColor = SystemColors.ControlText;
-                    }
-                }
-                else
-                {
-                    control.BackColor = SystemColors.Control;
-                    control.ForeColor = SystemColors.ControlText;
-
-                    if (control is TextBox textBox)
-                    {
-                        textBox.BackColor = Color.White;
-                        textBox.BorderStyle = BorderStyle.Fixed3D;
-                    }
-                    else if (control is Button button)
-                    {
-                        button.BackColor = Color.White;
-                        button.FlatStyle = FlatStyle.Standard;
-                        button.FlatAppearance.BorderColor = Color.White;
-                    }
-                    else if (control is ComboBox comboBox)
-                    {
-                        comboBox.BackColor = SystemColors.Window;
-                        comboBox.ForeColor = SystemColors.ControlText;
-                    }
-                }
-            }
+            BackColor = isDarkModeEnabled ? preferencesManager.DarkModeBackColor : SystemColors.Control;
+            preferencesManager.ApplyThemeToControls(Controls, isDarkModeEnabled);
         }
 
-        private void SaveDarkModePreference(bool darkModeEnabled)
+    private void SaveDarkModePreference(bool darkModeEnabled)
         {
-            string appDataFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AC e-Reader Card Creator");
-
-            if (!Directory.Exists(appDataFolderPath))
-            {
-                Directory.CreateDirectory(appDataFolderPath);
-            }
-
-            string preferenceFilePath = Path.Combine(appDataFolderPath, "DarkModePreference.txt");
-
-            File.WriteAllText(preferenceFilePath, darkModeEnabled.ToString());
+            preferencesManager.SaveDarkModePreference(darkModeEnabled);
         }
 
         private bool ReadDarkModePreference()
         {
-            string appDataFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AC e-Reader Card Creator");
-            string preferenceFilePath = Path.Combine(appDataFolderPath, "DarkModePreference.txt");
-
-            if (File.Exists(preferenceFilePath))
-            {
-                if (bool.TryParse(File.ReadAllText(preferenceFilePath), out bool darkModePreference))
-                {
-                    return darkModePreference;
-                }
-            }
-
-            return false;
+            return preferencesManager.ReadDarkModePreference();
         }
 
-        private void menu_View_Click(object sender, EventArgs e)
-        {
-
-        }
-    }
-}
-ntains(letter_sender))
-                    {
-                        comboBox_Sender.SelectedItem = letter_sender;
-                    }
-                    else
-                    {
-                        MessageBox.Show($"Sender '{letter_sender}' not found.");
-                    }
-
-                    textBox_ItemID.Text = itemID;
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Unable to open e-Card! Please make sure this is an Animal Crossing e-Reader Character Card or Classic Game Card.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void OpenDecompressedFileDir(object sender, EventArgs e)
-        {
-            if (Directory.Exists(Common.DECOMPRESSED_DIR))
-            {
-                Process.Start("explorer.exe", Common.DECOMPRESSED_DIR);
-            }
-            else
-            {
-                MessageBox.Show($"The directory does not exist: {Common.DECOMPRESSED_DIR}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void GenerateDotCodeClick(object sender, EventArgs e)
-        {
-            if (ValidInputs())
-            {
-                bool customFilePath = false;
-                Compress.DECtoVPK(comboBox_Greeting.Text, textBox_Body.Text, textBox_Closing.Text, comboBox_Stationery.Text, comboBox_Sender.Text, textBox_ItemID.Text);
-                Compress.VPKtoBIN();
-                Compress.BINtoRAW(customFilePath);
-
-                Print_Frontend printer_form = new()
-                {
-                    StartPosition = FormStartPosition.Manual
-                };
-
-                int centerX = Location.X + (Width - printer_form.Width) / 2;
-                int centerY = Location.Y + (Height - printer_form.Height) / 2;
-                centerX = Math.Max(centerX, Screen.GetWorkingArea(this).Left);
-                centerY = Math.Max(centerY, Screen.GetWorkingArea(this).Top);
-
-                printer_form.Location = new Point(centerX, centerY);
-                printer_form.ShowDialog();
-            }
-        }
-
-        private void GitRepoClick(object sender, EventArgs e)
-        {
-            string URL = "https://github.com/Hunter-Raff/e-ReaderCardCreator";
-            try
-            {
-                Process.Start(
-                    new ProcessStartInfo
-                    {
-                        FileName = URL,
-                        UseShellExecute = true
-                    }
-                );
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Failed to open web browser: {ex.Message}");
-            }
-        }
-
-        private void AboutClick(object sender, EventArgs e)
-        {
-            MessageBox.Show(Common.CREDIT, "e-Reader Character Card Creator");
-        }
-
-        private void ToggleDarkMode(object sender, EventArgs e)
-        {
-            isDarkModeEnabled = !isDarkModeEnabled;
-
-            BackColor = isDarkModeEnabled ? Color.FromArgb(40, 40, 40) : SystemColors.Control;
-
-            foreach (Control control in Controls)
-            {
-                if (control is ToolStrip)
-                {
-                    continue;
-                }
-
-                if (isDarkModeEnabled)
-                {
-                    control.BackColor = Color.FromArgb(40, 40, 40);
-                    control.ForeColor = Color.White;
-
-                    if (control is TextBox textBox)
-                    {
-                        textBox.BackColor = Color.FromArgb(31, 31, 31);
-                        textBox.BorderStyle = BorderStyle.FixedSingle;
-                    }
-                    else if (control is Button button)
-                    {
-                        button.FlatStyle = FlatStyle.Flat;
-                        button.FlatAppearance.BorderColor = Color.White;
-                    }
-                    else if (control is ComboBox comboBox)
-                    {
-                        comboBox.BackColor = SystemColors.Window;
-                        comboBox.ForeColor = SystemColors.ControlText;
-                    }
-                }
-                else
-                {
-                    control.BackColor = SystemColors.Control;
-                    control.ForeColor = SystemColors.ControlText;
-
-                    if (control is TextBox textBox)
-                    {
-                        textBox.BackColor = Color.White;
-                        textBox.BorderStyle = BorderStyle.Fixed3D;
-                    }
-                    else if (control is Button button)
-                    {
-                        button.BackColor = Color.White;
-                        button.FlatStyle = FlatStyle.Standard;
-                        button.FlatAppearance.BorderColor = Color.White;
-                    }
-                    else if (control is ComboBox comboBox)
-                    {
-                        comboBox.BackColor = SystemColors.Window;
-                        comboBox.ForeColor = SystemColors.ControlText;
-                    }
-                }
-            }
-
-            SaveDarkModePreference(isDarkModeEnabled);
-        }
-
-        private void ApplyDarkMode()
-        {
-            BackColor = isDarkModeEnabled ? Color.FromArgb(40, 40, 40) : SystemColors.Control;
-
-            foreach (Control control in Controls)
-            {
-                if (control is ToolStrip)
-                {
-                    continue;
-                }
-
-                if (isDarkModeEnabled)
-                {
-                    control.BackColor = Color.FromArgb(40, 40, 40);
-                    control.ForeColor = Color.White;
-
-                    if (control is TextBox textBox)
-                    {
-                        textBox.BackColor = Color.FromArgb(31, 31, 31);
-                        textBox.BorderStyle = BorderStyle.FixedSingle;
-                    }
-                    else if (control is Button button)
-                    {
-                        button.FlatStyle = FlatStyle.Flat;
-                        button.FlatAppearance.BorderColor = Color.White;
-                    }
-                    else if (control is ComboBox comboBox)
-                    {
-                        comboBox.BackColor = SystemColors.Window;
-                        comboBox.ForeColor = SystemColors.ControlText;
-                    }
-                }
-                else
-                {
-                    control.BackColor = SystemColors.Control;
-                    control.ForeColor = SystemColors.ControlText;
-
-                    if (control is TextBox textBox)
-                    {
-                        textBox.BackColor = Color.White;
-                        textBox.BorderStyle = BorderStyle.Fixed3D;
-                    }
-                    else if (control is Button button)
-                    {
-                        button.BackColor = Color.White;
-                        button.FlatStyle = FlatStyle.Standard;
-                        button.FlatAppearance.BorderColor = Color.White;
-                    }
-                    else if (control is ComboBox comboBox)
-                    {
-                        comboBox.BackColor = SystemColors.Window;
-                        comboBox.ForeColor = SystemColors.ControlText;
-                    }
-                }
-            }
-        }
-
-        private void SaveDarkModePreference(bool darkModeEnabled)
-        {
-            string appDataFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AC e-Reader Card Creator");
-
-            if (!Directory.Exists(appDataFolderPath))
-            {
-                Directory.CreateDirectory(appDataFolderPath);
-            }
-
-            string preferenceFilePath = Path.Combine(appDataFolderPath, "DarkModePreference.txt");
-
-            File.WriteAllText(preferenceFilePath, darkModeEnabled.ToString());
-        }
-
-        private bool ReadDarkModePreference()
-        {
-            string appDataFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AC e-Reader Card Creator");
-            string preferenceFilePath = Path.Combine(appDataFolderPath, "DarkModePreference.txt");
-
-            if (File.Exists(preferenceFilePath))
-            {
-                if (bool.TryParse(File.ReadAllText(preferenceFilePath), out bool darkModePreference))
-                {
-                    return darkModePreference;
-                }
-            }
-
-            return false;
-        }
-
-        private void menu_View_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

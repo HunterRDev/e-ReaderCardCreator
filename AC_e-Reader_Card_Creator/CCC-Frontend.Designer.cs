@@ -226,7 +226,6 @@ namespace AC_e_Reader_Card_Creator
             menu_View.Name = "menu_View";
             menu_View.Size = new System.Drawing.Size(44, 20);
             menu_View.Text = "View";
-            menu_View.Click += menu_View_Click;
             // 
             // menu_ToggleDarkMode
             // 

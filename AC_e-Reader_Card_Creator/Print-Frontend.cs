@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Printing;
-using System.Drawing.Text;
 using System.IO;
 using System.Windows.Forms;
 using AC_e_Reader_Card_Creator.References;
@@ -12,122 +11,33 @@ namespace AC_e_Reader_Card_Creator
     public partial class Print_Frontend : Form
     {
         private bool isDarkModeEnabled;
+        private PreferencesManager preferencesManager = new PreferencesManager("e-ReaderCardCreator");
 
         public Print_Frontend()
         {
             InitializeComponent();
             PopulatePrintersComboBox();
+            LoadDarkModePreference();
+            ApplyTheme();
 
             comboBox_DPI.SelectedIndex = 1; // 600 DPI default
-
-            isDarkModeEnabled = ReadDarkModePreference();
-            ApplyTheme();
-        }
-
-        private void ApplyTheme()
-        {
-            PrintFrontend.ApplyTheme(this, isDarkModeEnabled);
         }
 
         private void ToggleDarkMode(object sender, EventArgs e)
         {
             isDarkModeEnabled = !isDarkModeEnabled;
-
-            ApplyTheme();
-
-            SaveDarkModePreference(isDarkModeEnabled);
-
-            PrintFrontend.ApplyTheme(this, isDarkModeEnabled);
+            preferencesManager.SaveDarkModePreference(isDarkModeEnabled);
         }
 
-        private bool ReadDarkModePreference()
+        private void LoadDarkModePreference()
         {
-            string appDataFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AC e-Reader Card Creator");
-            string preferenceFilePath = Path.Combine(appDataFolderPath, "DarkModePreference.txt");
-
-            if (File.Exists(preferenceFilePath))
-            {
-                if (bool.TryParse(File.ReadAllText(preferenceFilePath), out bool darkModePreference))
-                {
-                    return darkModePreference;
-                }
-            }
-
-            return false;
+            isDarkModeEnabled = preferencesManager.ReadDarkModePreference();
         }
 
-        private void SaveDarkModePreference(bool darkModeEnabled)
+        private void ApplyTheme()
         {
-            string appDataFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AC e-Reader Card Creator");
-
-            if (!Directory.Exists(appDataFolderPath))
-            {
-                Directory.CreateDirectory(appDataFolderPath);
-            }
-
-            string preferenceFilePath = Path.Combine(appDataFolderPath, "DarkModePreference.txt");
-
-            File.WriteAllText(preferenceFilePath, darkModeEnabled.ToString());
-        }
-
-        public class PrintFrontend
-        {
-            public static void ApplyTheme(Form form, bool isDarkModeEnabled)
-            {
-                form.BackColor = isDarkModeEnabled ? Color.FromArgb(40, 40, 40) : SystemColors.Control;
-
-                foreach (Control control in form.Controls)
-                {
-                    if (control is ToolStrip)
-                    {
-                        continue;
-                    }
-
-                    if (isDarkModeEnabled)
-                    {
-                        control.BackColor = Color.FromArgb(40, 40, 40);
-                        control.ForeColor = Color.White;
-
-                        if (control is TextBox textBox)
-                        {
-                            textBox.BackColor = Color.FromArgb(31, 31, 31);
-                            textBox.BorderStyle = BorderStyle.FixedSingle;
-                        }
-                        else if (control is Button button)
-                        {
-                            button.FlatStyle = FlatStyle.Flat;
-                            button.FlatAppearance.BorderColor = Color.White;
-                        }
-                        else if (control is ComboBox comboBox)
-                        {
-                            comboBox.BackColor = SystemColors.Window;
-                            comboBox.ForeColor = SystemColors.ControlText;
-                        }
-                    }
-                    else
-                    {
-                        control.BackColor = SystemColors.Control;
-                        control.ForeColor = SystemColors.ControlText;
-
-                        if (control is TextBox textBox)
-                        {
-                            textBox.BackColor = Color.White;
-                            textBox.BorderStyle = BorderStyle.Fixed3D;
-                        }
-                        else if (control is Button button)
-                        {
-                            button.BackColor = Color.White;
-                            button.FlatStyle = FlatStyle.Standard;
-                            button.FlatAppearance.BorderColor = Color.White;
-                        }
-                        else if (control is ComboBox comboBox)
-                        {
-                            comboBox.BackColor = SystemColors.Window;
-                            comboBox.ForeColor = SystemColors.ControlText;
-                        }
-                    }
-                }
-            }
+            BackColor = isDarkModeEnabled ? preferencesManager.DarkModeBackColor : SystemColors.Control;
+            preferencesManager.ApplyThemeToControls(Controls, isDarkModeEnabled);
         }
 
         private void PopulatePrintersComboBox()
@@ -235,7 +145,7 @@ namespace AC_e_Reader_Card_Creator
 
             printDocument.PrintPage += (sender, e) =>
             {
-                Image image = Image.FromFile(Common.BMP_DOTCODE+".bmp");
+                Image image = Image.FromFile(Common.BMP_DOTCODE + ".bmp");
                 Point loc = new(0, 0);
                 e.Graphics.DrawImage(image, loc);
             };

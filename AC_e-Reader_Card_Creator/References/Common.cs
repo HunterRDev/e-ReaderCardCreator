@@ -8,12 +8,6 @@ namespace AC_e_Reader_Card_Creator.References
 {
     internal class Common
     {
-        /* 
-        a bunch of public reference strings for directory pathing -- not ideal
-        the program did not like working with C/CPP source code or its converted C# equivalent
-        ideally fix this and store with just variables, but it could be fine to give users easy access to the decomp'd files 
-        */
-
         public static string VERSION = "v1.0.0";
 
         public static string CREDIT = "AC e-Reader Character Card Creator\n" +
@@ -49,7 +43,7 @@ namespace AC_e_Reader_Card_Creator.References
         public static string BMP_DOTCODE = @"Project Files\Decompression\eCard\bmp\dotcode";
         public static string GCN_LETTER_DATA = @"Project Files\Decompression\eCard\dec\decompressed_data_GCN.bin";
 
-        public static byte[] VPK_DELIMITER = [0x76, 0x70, 0x6B, 0x30]; // "vpk0"
+        public static byte[] VPK_DELIMITER = { 0x76, 0x70, 0x6B, 0x30 }; // "vpk0"
         public static string RAW_OUTPUT = @"Project Files\Decompression\eCard\raw\";
         public static string BMP_OUTPUT = @"Project Files\Decompression\eCard\bmp\";
         public static string VPK_OUTPUT = @"Project Files\Decompression\eCard\vpk\";
@@ -115,24 +109,38 @@ namespace AC_e_Reader_Card_Creator.References
 
         public static void HandleLetterBody(List<Label> letter_lines, TextBox letter_body, int[] fontColor)
         {
-
             if (string.IsNullOrEmpty(letter_body.Text))
             {
-                for (int i = 1; i <= 6; i++)
-                {
-                    letter_lines[i].Text = null;
-                }
+                ClearLetterLines(letter_lines);
                 return;
             }
 
+            SetLabelColors(letter_lines, fontColor);
+
+            string[] delimiter = { "\n" };
+            string[] split_letter_body = letter_body.Text.Split(delimiter, StringSplitOptions.None);
+
+            UpdateLabelText(letter_lines, split_letter_body);
+        }
+
+        private static void ClearLetterLines(List<Label> letter_lines)
+        {
+            foreach (Label letter_line in letter_lines)
+            {
+                letter_line.Text = null;
+            }
+        }
+
+        private static void SetLabelColors(List<Label> letter_lines, int[] fontColor)
+        {
             foreach (Label letter_line in letter_lines)
             {
                 letter_line.ForeColor = Color.FromArgb(fontColor[0], fontColor[1], fontColor[2]);
             }
+        }
 
-            string[] delimiter = ["\n"];
-            string[] split_letter_body = letter_body.Text.Split(delimiter, StringSplitOptions.None);
-
+        private static void UpdateLabelText(List<Label> letter_lines, string[] split_letter_body)
+        {
             int line_index = 1;
             foreach (string line in split_letter_body)
             {
@@ -162,5 +170,13 @@ namespace AC_e_Reader_Card_Creator.References
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public static void ToggleDarkMode(Form form)
+        {
+            // Code for toggling dark mode
+            // ...
+        }
+
+        // ... (other functions)
     }
 }
