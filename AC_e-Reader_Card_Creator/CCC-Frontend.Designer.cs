@@ -92,7 +92,7 @@ namespace AC_e_Reader_Card_Creator
             comboBox_ItemName.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBox_ItemName.FormattingEnabled = true;
             comboBox_ItemName.Location = new System.Drawing.Point(116, 551);
-            comboBox_ItemName.Margin = new Padding(2);
+            comboBox_ItemName.Margin = new Padding(2, 2, 2, 2);
             comboBox_ItemName.Name = "comboBox_ItemName";
             comboBox_ItemName.Size = new System.Drawing.Size(152, 23);
             comboBox_ItemName.TabIndex = 0;
