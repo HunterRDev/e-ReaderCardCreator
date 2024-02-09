@@ -335,7 +335,7 @@ namespace AC_e_Reader_Card_Creator
             label_Version.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label_Version.AutoSize = true;
             label_Version.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Version.Location = new System.Drawing.Point(791, 616);
+            label_Version.Location = new System.Drawing.Point(791, 752);
             label_Version.Margin = new Padding(2, 0, 2, 0);
             label_Version.Name = "label_Version";
             label_Version.Size = new System.Drawing.Size(0, 14);
@@ -508,7 +508,6 @@ namespace AC_e_Reader_Card_Creator
             pictureBox_Stationery.Size = new System.Drawing.Size(540, 454);
             pictureBox_Stationery.TabIndex = 10;
             pictureBox_Stationery.TabStop = false;
-            pictureBox_Stationery.Click += pictureBox_Stationery_Click_1;
             // 
             // label_Line1
             // 
@@ -539,7 +538,6 @@ namespace AC_e_Reader_Card_Creator
             label_Line3.Name = "label_Line3";
             label_Line3.Size = new System.Drawing.Size(414, 38);
             label_Line3.TabIndex = 30;
-            label_Line3.Click += label_Line3_Click;
             // 
             // label_Line4
             // 
@@ -565,7 +563,7 @@ namespace AC_e_Reader_Card_Creator
             // 
             label_Line6.BackColor = System.Drawing.Color.Transparent;
             label_Line6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Line6.Location = new System.Drawing.Point(58, 312);
+            label_Line6.Location = new System.Drawing.Point(60, 316);
             label_Line6.Margin = new Padding(2, 0, 2, 0);
             label_Line6.Name = "label_Line6";
             label_Line6.Size = new System.Drawing.Size(416, 46);
@@ -575,7 +573,7 @@ namespace AC_e_Reader_Card_Creator
             // 
             label_Closing.BackColor = System.Drawing.Color.Transparent;
             label_Closing.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Closing.Location = new System.Drawing.Point(65, 358);
+            label_Closing.Location = new System.Drawing.Point(60, 362);
             label_Closing.Margin = new Padding(2, 0, 2, 0);
             label_Closing.Name = "label_Closing";
             label_Closing.Size = new System.Drawing.Size(419, 46);
@@ -598,14 +596,14 @@ namespace AC_e_Reader_Card_Creator
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(869, 447);
+            ClientSize = new System.Drawing.Size(869, 583);
+            Controls.Add(label_Line3);
             Controls.Add(label_Line1);
             Controls.Add(comboBox_Greeting);
             Controls.Add(label_Closing);
             Controls.Add(label_Line6);
             Controls.Add(label_Line5);
             Controls.Add(label_Line4);
-            Controls.Add(label_Line3);
             Controls.Add(label_Line2);
             Controls.Add(label_Greeting);
             Controls.Add(label9);
@@ -621,7 +619,6 @@ namespace AC_e_Reader_Card_Creator
             Controls.Add(header_Sender);
             Controls.Add(comboBox_Stationery);
             Controls.Add(header_Stationery);
-            Controls.Add(pictureBox_Stationery);
             Controls.Add(label_Version);
             Controls.Add(header_LetterText);
             Controls.Add(header_Gift);
@@ -630,6 +627,7 @@ namespace AC_e_Reader_Card_Creator
             Controls.Add(textBox_ItemID);
             Controls.Add(comboBox_ItemName);
             Controls.Add(menuStrip1);
+            Controls.Add(pictureBox_Stationery);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
