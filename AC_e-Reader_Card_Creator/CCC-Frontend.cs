@@ -293,10 +293,7 @@ namespace AC_e_Reader_Card_Creator
             }
         }
 
-        private void GreetingChanged(object sender, EventArgs e)
-        {
-            label_Greeting.Text = comboBox_Greeting.Text;
-        }
+        private void GreetingChanged(object sender, EventArgs e) => label_Greeting.Text = comboBox_Greeting.Text;
         private void ClosingChanged(object sender, EventArgs e)
         {
             label_Closing.Text = textBox_Closing.Text;
