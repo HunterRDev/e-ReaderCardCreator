@@ -92,7 +92,7 @@ namespace AC_e_Reader_Card_Creator
             comboBox_ItemName.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBox_ItemName.FormattingEnabled = true;
             comboBox_ItemName.Location = new System.Drawing.Point(116, 551);
-            comboBox_ItemName.Margin = new Padding(2);
+            comboBox_ItemName.Margin = new Padding(2, 2, 2, 2);
             comboBox_ItemName.Name = "comboBox_ItemName";
             comboBox_ItemName.Size = new System.Drawing.Size(152, 23);
             comboBox_ItemName.TabIndex = 0;
@@ -102,7 +102,7 @@ namespace AC_e_Reader_Card_Creator
             // 
             textBox_ItemID.CharacterCasing = CharacterCasing.Upper;
             textBox_ItemID.Location = new System.Drawing.Point(43, 551);
-            textBox_ItemID.Margin = new Padding(2);
+            textBox_ItemID.Margin = new Padding(2, 2, 2, 2);
             textBox_ItemID.MaxLength = 4;
             textBox_ItemID.Name = "textBox_ItemID";
             textBox_ItemID.Size = new System.Drawing.Size(69, 23);
@@ -335,7 +335,7 @@ namespace AC_e_Reader_Card_Creator
             label_Version.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label_Version.AutoSize = true;
             label_Version.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Version.Location = new System.Drawing.Point(791, 752);
+            label_Version.Location = new System.Drawing.Point(791, 616);
             label_Version.Margin = new Padding(2, 0, 2, 0);
             label_Version.Name = "label_Version";
             label_Version.Size = new System.Drawing.Size(0, 14);
@@ -358,7 +358,7 @@ namespace AC_e_Reader_Card_Creator
             comboBox_Stationery.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBox_Stationery.FormattingEnabled = true;
             comboBox_Stationery.Location = new System.Drawing.Point(24, 382);
-            comboBox_Stationery.Margin = new Padding(2);
+            comboBox_Stationery.Margin = new Padding(2, 2, 2, 2);
             comboBox_Stationery.Name = "comboBox_Stationery";
             comboBox_Stationery.Size = new System.Drawing.Size(244, 23);
             comboBox_Stationery.TabIndex = 13;
@@ -381,7 +381,7 @@ namespace AC_e_Reader_Card_Creator
             comboBox_Sender.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBox_Sender.FormattingEnabled = true;
             comboBox_Sender.Location = new System.Drawing.Point(24, 452);
-            comboBox_Sender.Margin = new Padding(2);
+            comboBox_Sender.Margin = new Padding(2, 2, 2, 2);
             comboBox_Sender.Name = "comboBox_Sender";
             comboBox_Sender.Size = new System.Drawing.Size(244, 23);
             comboBox_Sender.TabIndex = 15;
@@ -401,7 +401,7 @@ namespace AC_e_Reader_Card_Creator
             // 
             btn_SaveRAW.BackColor = System.Drawing.Color.White;
             btn_SaveRAW.Location = new System.Drawing.Point(735, 543);
-            btn_SaveRAW.Margin = new Padding(2);
+            btn_SaveRAW.Margin = new Padding(2, 2, 2, 2);
             btn_SaveRAW.Name = "btn_SaveRAW";
             btn_SaveRAW.Size = new System.Drawing.Size(107, 28);
             btn_SaveRAW.TabIndex = 17;
@@ -413,7 +413,7 @@ namespace AC_e_Reader_Card_Creator
             // 
             btn_GenDotCode.BackColor = System.Drawing.Color.White;
             btn_GenDotCode.Location = new System.Drawing.Point(580, 543);
-            btn_GenDotCode.Margin = new Padding(2);
+            btn_GenDotCode.Margin = new Padding(2, 2, 2, 2);
             btn_GenDotCode.Name = "btn_GenDotCode";
             btn_GenDotCode.Size = new System.Drawing.Size(150, 28);
             btn_GenDotCode.TabIndex = 18;
@@ -444,7 +444,7 @@ namespace AC_e_Reader_Card_Creator
             // textBox_Body
             // 
             textBox_Body.Location = new System.Drawing.Point(23, 145);
-            textBox_Body.Margin = new Padding(2);
+            textBox_Body.Margin = new Padding(2, 2, 2, 2);
             textBox_Body.MaxLength = 180;
             textBox_Body.Multiline = true;
             textBox_Body.Name = "textBox_Body";
@@ -466,7 +466,7 @@ namespace AC_e_Reader_Card_Creator
             // textBox_Closing
             // 
             textBox_Closing.Location = new System.Drawing.Point(24, 316);
-            textBox_Closing.Margin = new Padding(2);
+            textBox_Closing.Margin = new Padding(2, 2, 2, 2);
             textBox_Closing.Name = "textBox_Closing";
             textBox_Closing.Size = new System.Drawing.Size(244, 23);
             textBox_Closing.TabIndex = 23;
@@ -503,7 +503,7 @@ namespace AC_e_Reader_Card_Creator
             pictureBox_Stationery.BackgroundImage = Properties.Resources.Airmail_Paper_PG;
             pictureBox_Stationery.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox_Stationery.Location = new System.Drawing.Point(303, 73);
-            pictureBox_Stationery.Margin = new Padding(2);
+            pictureBox_Stationery.Margin = new Padding(2, 2, 2, 2);
             pictureBox_Stationery.Name = "pictureBox_Stationery";
             pictureBox_Stationery.Size = new System.Drawing.Size(540, 454);
             pictureBox_Stationery.TabIndex = 10;
@@ -563,7 +563,7 @@ namespace AC_e_Reader_Card_Creator
             // 
             label_Line6.BackColor = System.Drawing.Color.Transparent;
             label_Line6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Line6.Location = new System.Drawing.Point(60, 316);
+            label_Line6.Location = new System.Drawing.Point(58, 312);
             label_Line6.Margin = new Padding(2, 0, 2, 0);
             label_Line6.Name = "label_Line6";
             label_Line6.Size = new System.Drawing.Size(416, 46);
@@ -573,7 +573,7 @@ namespace AC_e_Reader_Card_Creator
             // 
             label_Closing.BackColor = System.Drawing.Color.Transparent;
             label_Closing.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Closing.Location = new System.Drawing.Point(60, 362);
+            label_Closing.Location = new System.Drawing.Point(65, 358);
             label_Closing.Margin = new Padding(2, 0, 2, 0);
             label_Closing.Name = "label_Closing";
             label_Closing.Size = new System.Drawing.Size(419, 46);
@@ -586,7 +586,7 @@ namespace AC_e_Reader_Card_Creator
             comboBox_Greeting.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBox_Greeting.FormattingEnabled = true;
             comboBox_Greeting.Location = new System.Drawing.Point(23, 91);
-            comboBox_Greeting.Margin = new Padding(2);
+            comboBox_Greeting.Margin = new Padding(2, 2, 2, 2);
             comboBox_Greeting.Name = "comboBox_Greeting";
             comboBox_Greeting.Size = new System.Drawing.Size(244, 23);
             comboBox_Greeting.TabIndex = 35;
@@ -596,14 +596,14 @@ namespace AC_e_Reader_Card_Creator
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(869, 583);
-            Controls.Add(label_Line3);
+            ClientSize = new System.Drawing.Size(869, 447);
             Controls.Add(label_Line1);
             Controls.Add(comboBox_Greeting);
             Controls.Add(label_Closing);
             Controls.Add(label_Line6);
             Controls.Add(label_Line5);
             Controls.Add(label_Line4);
+            Controls.Add(label_Line3);
             Controls.Add(label_Line2);
             Controls.Add(label_Greeting);
             Controls.Add(label9);
@@ -619,6 +619,7 @@ namespace AC_e_Reader_Card_Creator
             Controls.Add(header_Sender);
             Controls.Add(comboBox_Stationery);
             Controls.Add(header_Stationery);
+            Controls.Add(pictureBox_Stationery);
             Controls.Add(label_Version);
             Controls.Add(header_LetterText);
             Controls.Add(header_Gift);
@@ -627,13 +628,13 @@ namespace AC_e_Reader_Card_Creator
             Controls.Add(textBox_ItemID);
             Controls.Add(comboBox_ItemName);
             Controls.Add(menuStrip1);
-            Controls.Add(pictureBox_Stationery);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(2);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "eReaderCCC";
             Text = "AC e-Reader Character Card Creator";
+            Load += eReaderCCC_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox_Stationery).EndInit();
@@ -702,3 +703,4 @@ namespace AC_e_Reader_Card_Creator
         private ToolStripMenuItem menu_ToggleDarkMode;
     }
 }
+

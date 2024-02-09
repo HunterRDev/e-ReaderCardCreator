@@ -57,32 +57,6 @@ public class PreferencesManager
             {
                 continue;
             }
-
-            if (isDarkModeEnabled)
-            {
-                control.BackColor = DarkModeBackColor;
-                control.ForeColor = DarkModeForeColor;
-
-                if (control is TextBox textBox)
-                {
-                    if (isDarkModeEnabled)
-                    {
-                        textBox.BackColor = DarkModeTextBoxBackColor;
-                        textBox.BorderStyle = BorderStyle.FixedSingle;
-                    }
-                    else
-                    {
-                        textBox.BackColor = SystemColors.Window;
-                        textBox.BorderStyle = BorderStyle.Fixed3D;
-                    }
-                }
-
-                else if (control is ComboBox comboBox)
-                {
-                    comboBox.BackColor = SystemColors.Window;
-                    comboBox.ForeColor = SystemColors.ControlText;
-                }
-            }
             else
             {
                 control.BackColor = SystemColors.Control;
@@ -103,11 +77,6 @@ public class PreferencesManager
                 {
                     comboBox.BackColor = SystemColors.Window;
                     comboBox.ForeColor = SystemColors.ControlText;
-                }
-
-                if (control.Controls.Count > 0)
-                {
-                    ApplyThemeToControls(control.Controls, isDarkModeEnabled);
                 }
             }
         }

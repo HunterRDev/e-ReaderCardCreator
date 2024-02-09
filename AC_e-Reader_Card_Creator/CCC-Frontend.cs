@@ -599,5 +599,10 @@ namespace AC_e_Reader_Card_Creator
         {
             return preferencesManager.ReadDarkModePreference();
         }
+
+        private void eReaderCCC_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
