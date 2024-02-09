@@ -57,6 +57,19 @@ public class PreferencesManager
             {
                 continue;
             }
+
+            if (isDarkModeEnabled)
+            {
+                control.BackColor = DarkModeBackColor;
+                control.ForeColor = DarkModeForeColor;
+
+
+                else if (control is ComboBox comboBox)
+                {
+                    comboBox.BackColor = SystemColors.Window;
+                    comboBox.ForeColor = SystemColors.ControlText;
+                }
+            }
             else
             {
                 control.BackColor = SystemColors.Control;
