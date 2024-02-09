@@ -96,6 +96,7 @@ namespace AC_e_Reader_Card_Creator
             Common.HandleLetterBody(letter_labels, textBox_Body, fontColor);
         }
 
+
         private void LetterBodyKeyPress(object sender, KeyPressEventArgs e)
         {
             if (textBox_Body.Text != null)
@@ -122,6 +123,7 @@ namespace AC_e_Reader_Card_Creator
                 Common.HandleLetterBody(letter_labels, textBox_Body, fontColor);
             }
         }
+
 
         private void ItemNameChanged(object sender, EventArgs e)
         {
@@ -293,7 +295,10 @@ namespace AC_e_Reader_Card_Creator
             }
         }
 
-        private void GreetingChanged(object sender, EventArgs e) => label_Greeting.Text = comboBox_Greeting.Text;
+        private void GreetingChanged(object sender, EventArgs e)
+        {
+            label_Greeting.Text = comboBox_Greeting.Text;
+        }
         private void ClosingChanged(object sender, EventArgs e)
         {
             label_Closing.Text = textBox_Closing.Text;

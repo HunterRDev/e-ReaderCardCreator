@@ -83,29 +83,6 @@ public class PreferencesManager
                     comboBox.ForeColor = SystemColors.ControlText;
                 }
             }
-            else
-            {
-                control.BackColor = SystemColors.Control;
-                control.ForeColor = SystemColors.ControlText;
-
-                if (control is TextBox textBox)
-                {
-                    textBox.BackColor = SystemColors.Window;
-                    textBox.BorderStyle = BorderStyle.Fixed3D;
-                }
-                else if (control is Button button)
-                {
-                    button.BackColor = SystemColors.Window;
-                    button.FlatStyle = FlatStyle.Standard;
-                    button.FlatAppearance.BorderColor = SystemColors.ControlText;
-                }
-                else if (control is ComboBox comboBox)
-                {
-                    comboBox.BackColor = SystemColors.Window;
-                    comboBox.ForeColor = SystemColors.ControlText;
-                }
-
-            }
         }
     }
     private string GetPreferenceValue(string content, string key)
