@@ -138,6 +138,7 @@ namespace AC_e_Reader_Card_Creator
             }
         }
 
+
         private void ItemIDKeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = char.ToUpper(e.KeyChar);
@@ -200,6 +201,7 @@ namespace AC_e_Reader_Card_Creator
                 MessageBox.Show("Error reading file: " + ex.Message);
             }
         }
+
 
         private void LoadSenderIDs()
         {
@@ -589,7 +591,7 @@ namespace AC_e_Reader_Card_Creator
             preferencesManager.ApplyThemeToControls(Controls, isDarkModeEnabled);
         }
 
-    private void SaveDarkModePreference(bool darkModeEnabled)
+        private void SaveDarkModePreference(bool darkModeEnabled)
         {
             preferencesManager.SaveDarkModePreference(darkModeEnabled);
         }
@@ -599,5 +601,19 @@ namespace AC_e_Reader_Card_Creator
             return preferencesManager.ReadDarkModePreference();
         }
 
+        private void pictureBox_Stationery_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Line3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox_Stationery_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

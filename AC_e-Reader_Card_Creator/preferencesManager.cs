@@ -65,14 +65,18 @@ public class PreferencesManager
 
                 if (control is TextBox textBox)
                 {
-                    textBox.BackColor = DarkModeTextBoxBackColor;
-                    textBox.BorderStyle = BorderStyle.FixedSingle;
+                    if (isDarkModeEnabled)
+                    {
+                        textBox.BackColor = DarkModeTextBoxBackColor;
+                        textBox.BorderStyle = BorderStyle.FixedSingle;
+                    }
+                    else
+                    {
+                        textBox.BackColor = SystemColors.Window;
+                        textBox.BorderStyle = BorderStyle.Fixed3D;
+                    }
                 }
-                else if (control is Button button)
-                {
-                    button.FlatStyle = FlatStyle.Flat;
-                    button.FlatAppearance.BorderColor = DarkModeForeColor;
-                }
+
                 else if (control is ComboBox comboBox)
                 {
                     comboBox.BackColor = SystemColors.Window;

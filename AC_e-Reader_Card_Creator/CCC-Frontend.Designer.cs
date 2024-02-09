@@ -92,7 +92,7 @@ namespace AC_e_Reader_Card_Creator
             comboBox_ItemName.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBox_ItemName.FormattingEnabled = true;
             comboBox_ItemName.Location = new System.Drawing.Point(116, 551);
-            comboBox_ItemName.Margin = new Padding(2, 2, 2, 2);
+            comboBox_ItemName.Margin = new Padding(2);
             comboBox_ItemName.Name = "comboBox_ItemName";
             comboBox_ItemName.Size = new System.Drawing.Size(152, 23);
             comboBox_ItemName.TabIndex = 0;
@@ -335,7 +335,7 @@ namespace AC_e_Reader_Card_Creator
             label_Version.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label_Version.AutoSize = true;
             label_Version.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label_Version.Location = new System.Drawing.Point(791, 750);
+            label_Version.Location = new System.Drawing.Point(791, 616);
             label_Version.Margin = new Padding(2, 0, 2, 0);
             label_Version.Name = "label_Version";
             label_Version.Size = new System.Drawing.Size(0, 14);
@@ -508,6 +508,7 @@ namespace AC_e_Reader_Card_Creator
             pictureBox_Stationery.Size = new System.Drawing.Size(540, 454);
             pictureBox_Stationery.TabIndex = 10;
             pictureBox_Stationery.TabStop = false;
+            pictureBox_Stationery.Click += pictureBox_Stationery_Click_1;
             // 
             // label_Line1
             // 
@@ -538,6 +539,7 @@ namespace AC_e_Reader_Card_Creator
             label_Line3.Name = "label_Line3";
             label_Line3.Size = new System.Drawing.Size(414, 38);
             label_Line3.TabIndex = 30;
+            label_Line3.Click += label_Line3_Click;
             // 
             // label_Line4
             // 
@@ -596,7 +598,7 @@ namespace AC_e_Reader_Card_Creator
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(869, 581);
+            ClientSize = new System.Drawing.Size(869, 447);
             Controls.Add(label_Line1);
             Controls.Add(comboBox_Greeting);
             Controls.Add(label_Closing);
@@ -702,4 +704,3 @@ namespace AC_e_Reader_Card_Creator
         private ToolStripMenuItem menu_ToggleDarkMode;
     }
 }
-
