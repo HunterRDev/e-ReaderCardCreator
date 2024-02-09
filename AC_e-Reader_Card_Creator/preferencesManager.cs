@@ -108,7 +108,6 @@ public class PreferencesManager
             }
         }
     }
-
     private string GetPreferenceValue(string content, string key)
     {
         string keyString = $"{key}=";
