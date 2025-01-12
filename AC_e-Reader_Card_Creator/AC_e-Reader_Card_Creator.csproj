@@ -21,6 +21,7 @@
     <GenerateManifests>true</GenerateManifests>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
+	<ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
 
@@ -34,10 +35,10 @@
 
   <PropertyGroup>
     <ApplicationIcon>e-reader-ccc.ico</ApplicationIcon>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Decompression\eCard\" />
 
     <Content Include="References\*.txt">
       <Link>%(RecursiveDir)\Project Files\References\%(Filename)%(Extension)</Link>
@@ -63,6 +64,13 @@
       <Link>%(RecursiveDir)\Project Files\Resources\%(Filename)%(Extension)</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Decompression\External\nedclib\**" />
+    <Content Remove="Decompression\External\nedclib\**" />
+    <EmbeddedResource Remove="Decompression\External\nedclib\**" />
+    <None Remove="Decompression\External\nedclib\**" />
   </ItemGroup>
 
   <ItemGroup>
