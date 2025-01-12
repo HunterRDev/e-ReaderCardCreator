@@ -1,0 +1,27 @@
+on:
+  push:
+    branches: ["*"]
+  pull_request:
+    branches: ["*"]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup MSVC
+        uses: ilammy/msvc-dev-cmd@v1
+      - name: Build
+        run: |
+          nuget restore
+          msbuild -p:Configuration=Release -m
+      - name: Package
+        run: |
+          cd AC_e-Reader_Card_Creator/bin/Release/net*-windows/
+          Copy-Item -Destination . '${{ github.workspace }}/x64/Release/nedclib.dll'
+          7z -tzip a '${{ github.workspace }}/e-ReaderCardCreator.zip' .
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: e-ReaderCardCreator
+          path: e-ReaderCardCreator.zip

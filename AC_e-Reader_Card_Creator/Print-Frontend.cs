@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Windows.Forms;
+using AC_e_Reader_Card_Creator.Decompression.Functions;
 using AC_e_Reader_Card_Creator.References;
 
 namespace AC_e_Reader_Card_Creator
@@ -77,16 +78,7 @@ namespace AC_e_Reader_Card_Creator
 
             if (saveRAWFile.ShowDialog() == DialogResult.OK)
             {
-                ProcessStartInfo raw_to_bmp = new()
-                {
-                    FileName = Common.RAW2BMP,
-                    Arguments = Common.RAW2BMP_ARGS(saveRAWFile.FileName.Replace(".bmp", ""), DPI),
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true,
-                    CreateNoWindow = true
-                };
-                using Process process = Process.Start(raw_to_bmp);
-                process.WaitForExit();
+                NedcLib.Raw2Bmp(Common.RAW_ECARD, saveRAWFile.FileName.Replace(".bmp", ""), DPI);
             }
         }
 
@@ -101,16 +93,7 @@ namespace AC_e_Reader_Card_Creator
             int DPI = int.Parse(comboBox_DPI.Text[..^4]);
             MessageBox.Show($"{DPI}");
 
-            ProcessStartInfo raw_to_bmp = new()
-            {
-                FileName = Common.RAW2BMP,
-                Arguments = Common.RAW2BMP_ARGS(Common.BMP_DOTCODE, DPI),
-                UseShellExecute = false,
-                RedirectStandardOutput = true,
-                CreateNoWindow = true
-            };
-            using (Process process = Process.Start(raw_to_bmp)) { process.WaitForExit(); }
-
+            NedcLib.Raw2Bmp(Common.RAW_ECARD, Common.BMP_DOTCODE, DPI);
             PrintDotCode();
         }
 

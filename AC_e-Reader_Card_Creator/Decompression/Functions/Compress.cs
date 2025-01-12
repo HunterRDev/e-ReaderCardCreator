@@ -16,7 +16,7 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
             string new_greeting = greeting;
             int player_index = greeting.IndexOf("<Player>");
 
-            if(player_index != -1)
+            if (player_index != -1)
             {
                 new_greeting = string.Concat(greeting.AsSpan(0, player_index), greeting.AsSpan(player_index + 8));
             }
@@ -27,9 +27,9 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
             new_body = ACAsciiToBytes(new_body);
 
             // should only be true if letter uses special characters
-            if(new_body.Length < 384)
+            if (new_body.Length < 384)
             {
-                while(new_body.Length < 384)
+                while (new_body.Length < 384)
                 {
                     new_body += "20";
                 }
@@ -57,15 +57,7 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
             string filePath = Common.DECOMPRESSED_GCN;
             File.WriteAllBytes(filePath, body_bytes);
 
-            ProcessStartInfo dec_to_vpk = new()
-            {
-                FileName = Common.NEVPK,
-                Arguments = Common.NEVPK_ARGS_COMP(Common.DECOMPRESSED_GCN),
-                UseShellExecute = false,
-                RedirectStandardOutput = true,
-                CreateNoWindow = true
-            };
-            using (Process process = Process.Start(dec_to_vpk)) { process.WaitForExit(); }
+            NedcLib.VpkCompress(Common.DECOMPRESSED_GCN, Common.VPK_GCN);
 
             FixVPKChecksums();
         }
@@ -105,16 +97,29 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                     byte[] padding = new byte[paddingSize];
                     NewBIN.Write(padding, 0, padding.Length);
                 }
-            }
 
-            ProcessStartInfo fix_header_checksums = new(Common.HEADERFIX, $"\"{Common.COMPRESSED_BIN}\"")
+                HeaderFix.FixHeaderChecksums(NewBIN);
+            }
+        }
+
+        private static void BINtoRAW(string inputFilePath, string outputFilePath)
+        {
+            int result = NedcLib.bin2raw(inputFilePath, outputFilePath);
+            switch (result)
             {
-                UseShellExecute = false,
-                RedirectStandardOutput = true,
-                CreateNoWindow = true
-            };
-            using Process process = Process.Start(fix_header_checksums);
-            process.WaitForExit();
+                case 0:
+                    break;
+                case -1:
+                    throw new Exception("Unable to open input file");
+                case -2:
+                    throw new Exception("Invalid bin file");
+                case -3:
+                    throw new Exception("Unable to encode bin file to raw");
+                case -4:
+                    throw new Exception("Unable to write to output file");
+                default:
+                    throw new Exception($"bin2raw failed with error code {result}");
+            }
         }
 
         public static void BINtoRAW(bool custom)
@@ -129,30 +134,12 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                 };
                 if (saveRAWFile.ShowDialog() == DialogResult.OK)
                 {
-                    ProcessStartInfo bin_to_raw = new()
-                    {
-                        FileName = Common.NEDCENC,
-                        Arguments = Common.NEDCENC_ARGS_COMP(saveRAWFile.FileName),
-                        UseShellExecute = false,
-                        RedirectStandardOutput = true,
-                        CreateNoWindow = true
-                    };
-                    using Process process = Process.Start(bin_to_raw);
-                    process.WaitForExit();
+                    BINtoRAW(Common.COMPRESSED_BIN, saveRAWFile.FileName);
                 }
             }
             else
             {
-                ProcessStartInfo bin_to_raw = new()
-                {
-                    FileName = Common.NEDCENC,
-                    Arguments = Common.NEDCENC_ARGS_COMP(Common.RAW_ECARD),
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true,
-                    CreateNoWindow = true
-                };
-                using Process process = Process.Start(bin_to_raw);
-                process.WaitForExit();
+                BINtoRAW(Common.COMPRESSED_BIN, Common.RAW_ECARD);
             }
         }
 
@@ -205,7 +192,7 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                 }
 
                 byte[] GCN_FileSize_Checksum = HexStringToByteArray(GCN_VPK_Hex_Length);
-               
+
                 fileContents[^2] = GCN_FileSize_Checksum[1];
                 fileContents[^1] = GCN_FileSize_Checksum[0];
 

@@ -40,17 +40,22 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
         {
             try
             {
-                ProcessStartInfo raw_to_bin = new()
+                int result = NedcLib.raw2bin(filePath, Common.COMPRESSED_BIN);
+                switch (result)
                 {
-                    FileName = Common.NEDCENC,
-                    Arguments = Common.NEDCENCE_ARGS_DECOMP(filePath),
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true,
-                    CreateNoWindow = true
-                };
-
-                using Process process = Process.Start(raw_to_bin);
-                process.WaitForExit();
+                    case 0:
+                        break;
+                    case -1:
+                        throw new Exception("Unable to open input file");
+                    case -2:
+                        throw new Exception("Invalid raw file");
+                    case -3:
+                        throw new Exception("Unable to decode raw file to bin");
+                    case -4:
+                        throw new Exception("Unable to write to output file");
+                    default:
+                        throw new Exception($"raw2bin failed with error code {result}");
+                }
             }
             catch (Exception ex)
             {
@@ -66,7 +71,7 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
             int iteration = 1;
 
             foreach (string vpk_file in vpk_file_paths)
-            {   
+            {
                 try
                 {
                     if (iteration == 1)
@@ -74,22 +79,20 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                         iteration++;
                         continue;
                     }
-                    else
+                    else if (iteration == 2)
                     {
-                        ProcessStartInfo vpk_to_dec = new()
-                        {
-                            FileName = Common.NEVPK,
-                            Arguments = Common.NEVPK_ARGS_DECOMP(vpk_file, iteration),
-                            UseShellExecute = false,
-                            RedirectStandardOutput = true,
-                            CreateNoWindow = true
-                        };
-
-                        using (Process process = Process.Start(vpk_to_dec)) { process.WaitForExit(); }
-
+                        NedcLib.VpkDecompress(vpk_file, Common.DECOMPRESSED_GBA);
                         iteration++;
                     }
-
+                    else if (iteration == 3)
+                    {
+                        NedcLib.VpkDecompress(vpk_file, Common.DECOMPRESSED_GCN);
+                        iteration++;
+                    }
+                    else
+                    {
+                        throw new Exception("Too many VPK files found");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -116,7 +119,7 @@ namespace AC_e_Reader_Card_Creator.Decompression.Functions
                 default:
                     break;
             }
-            
+
             using (FileStream outFile = new(fileName, FileMode.Create, FileAccess.Write))
             {
                 if (chunkNumber != 1)
